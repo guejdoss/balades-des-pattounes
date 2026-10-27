@@ -5,32 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Les Balades des Pattounes</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Promenade et visites pour chiens aux Batignolles, Paris 17e. Rencontre offerte, photo après chaque sortie.">
+<meta name="description" content="Promenade et visites pour chiens à Paris 17e (Batignolles, Ternes, Épinettes), 8e, 9e, 18e, Levallois et Clichy. Rencontre offerte, photo après chaque sortie.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap">
 <style>
 /* Layout: a calm neighbourhood journal — airy serif headlines, a price list set like a menu, sage and blush washes */
 :root{
-  --bg:#f6f5f0; --paper:#ffffff; --ink:#263230; --muted:#66716d; --line:#dde0d8;
-  --sage:#5e7d6a; --sage-soft:#e3ebe2; --blush:#f3d9cf; --blush-ink:#9a5a48; --butter:#f2e3b6;
+  --bg:#fcfbf8; --paper:#ffffff; --ink:#3a4542; --muted:#76807c; --line:#e7e9e2;
+  --sage:#7e9e89; --sage-deep:#5f8170; --sage-soft:#eef4ee; --blush:#f8e6df; --blush-ink:#c07a66; --butter:#f8ecc6;
   --display:"Instrument Serif", "Iowan Old Style", Georgia, serif;
   --body:"Manrope", "Segoe UI", system-ui, sans-serif;
+  color-scheme:light;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#161c1a; --paper:#1d2522; --ink:#ecefe9; --muted:#a6b0aa; --line:#2f3a36;
-  --sage:#9cc0a8; --sage-soft:#22302a; --blush:#3a2924; --blush-ink:#e9b3a2; --butter:#3a3422; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#161c1a; --paper:#1d2522; --ink:#ecefe9; --muted:#a6b0aa; --line:#2f3a36;
-  --sage:#9cc0a8; --sage-soft:#22302a; --blush:#3a2924; --blush-ink:#e9b3a2; --butter:#3a3422; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.65;margin:0}
 .wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.05;text-wrap:balance;margin:0}
-h1 em,h2 em{color:var(--sage)}
+h1 em,h2 em{color:var(--sage-deep)}
 h2{font-size:clamp(34px,4.6vw,52px)}
 h3{font-size:26px}
 p{margin:0}
 a{color:inherit}
-.eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .eyebrow::before{content:"";width:22px;height:1px;background:currentColor}
 section{padding-block:88px}
 .lead{color:var(--muted);max-width:58ch;font-size:17.5px}
@@ -44,8 +39,9 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .navlinks{display:flex;gap:26px;font-size:14px;font-weight:500}
 .navlinks a{text-decoration:none;color:var(--muted)}
 .navlinks a:hover{color:var(--ink)}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);font:inherit;font-size:15px;font-weight:600;padding:12px 24px;border-radius:999px;text-decoration:none;border:1px solid var(--ink);cursor:pointer;transition:background .2s,color .2s}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--sage-deep);color:#fff;font:inherit;font-size:15px;font-weight:600;padding:12px 24px;border-radius:999px;text-decoration:none;border:1px solid var(--sage-deep);cursor:pointer;transition:background .2s,color .2s}
 .btn:hover{background:var(--sage);border-color:var(--sage)}
+.btn.ghost{border-color:var(--sage)}
 .btn.ghost{background:transparent;color:var(--ink)}
 .btn.ghost:hover{background:var(--sage-soft)}
 .btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--sage);outline-offset:3px}
@@ -146,9 +142,9 @@ img{max-width:100%}
 
 <header class="hero" id="top"><div class="wrap">
   <div>
-    <p class="eyebrow">Promenade et visites de chiens · Batignolles, Paris 17e</p>
+    <p class="eyebrow">Promenade et visites de chiens · Paris 17e et alentours</p>
     <h1>Votre chien se promène <em>avec Umi</em> pendant que vous travaillez.</h1>
-    <p class="lead">Je m'appelle Einat et je vis aux Batignolles avec Umi, ma bergère américaine. Je promène votre chien dans le quartier, je passe le voir quand vous rentrez tard, et je vous envoie une photo après chaque sortie.</p>
+    <p class="lead">Je m'appelle Einat et je vis aux Batignolles avec Umi, ma bergère américaine. Je promène votre chien dans votre quartier, je passe le voir quand vous rentrez tard, et je vous envoie une photo après chaque sortie.</p>
     <div class="cta"><a class="btn" href="#contact">Demander la rencontre offerte</a><a class="btn ghost" href="#tarifs">Voir les tarifs</a></div>
     <div class="facts"><span>Rencontre offerte avant de commencer</span><span>Une photo après chaque sortie</span><span>Promenade individuelle</span></div>
   </div>
@@ -203,31 +199,28 @@ img{max-width:100%}
 <section class="quartier" id="quartier"><div class="wrap">
   <div>
     <p class="eyebrow">Quartiers desservis</p>
-    <h2>Les Batignolles <em>et leurs voisins</em>, à pied</h2>
-    <p class="lead" style="margin-top:16px">Je viens à pied : pas de trajet en voiture pour votre chien.</p>
+    <h2>Le 17e <em>et tout autour</em></h2>
+    <p class="lead" style="margin-top:16px">J'habite les Batignolles et je me déplace à pied ou en métro dans tout le nord-ouest de Paris. Votre chien, lui, ne quitte jamais son quartier.</p>
     <ul class="parks">
-      <li><span>Batignolles · Lobligeois · rue des Moines</span><span>à côté</span></li>
-      <li><span>Clichy-Batignolles · parc Martin-Luther-King</span><span>≈ 10 min</span></li>
-      <li><span>Épinettes · Brochant · Guy-Môquet</span><span>≈ 10 min</span></li>
-      <li><span>La Fourche · Rome · Villiers</span><span>≈ 10 min</span></li>
+      <li><span>Batignolles · Épinettes · Clichy-Batignolles · Brochant</span><span>17e</span></li>
+      <li><span>Ternes · Monceau · Villiers · Pereire</span><span>17e · 8e</span></li>
+      <li><span>La Fourche · Guy-Môquet · Lamarck · Abbesses</span><span>18e</span></li>
+      <li><span>Europe · Saint-Lazare · Rome · Pigalle</span><span>8e · 9e</span></li>
+      <li><span>Levallois-Perret · Clichy</span><span>92</span></li>
     </ul>
+    <p class="extras">Vous êtes un peu plus loin ? Écrivez-moi quand même.</p>
   </div>
-  <div class="map" aria-label="Plan schématique des quartiers desservis autour des Batignolles">
-    <svg viewBox="0 0 420 340" role="img" aria-labelledby="mapt"><title id="mapt">Zone desservie autour des Batignolles</title>
-      <circle cx="210" cy="175" r="140" fill="var(--sage-soft)"/>
-      <circle cx="210" cy="175" r="140" fill="none" stroke="var(--sage)" stroke-dasharray="2 6" stroke-width="1.2"/>
-      <g stroke="var(--line)" stroke-width="5" stroke-linecap="round" fill="none">
-        <path d="M60 300 L360 40"/><path d="M40 150 L390 210"/><path d="M110 40 L300 320"/>
-      </g>
-      <g font-family="Manrope, system-ui, sans-serif" font-size="11" fill="var(--muted)">
-        <text x="300" y="80" transform="rotate(-41 300 80)">Av. de Clichy</text><text x="48" y="140">Rue Legendre</text><text x="250" y="300" transform="rotate(56 250 300)">Rue Cardinet</text>
-      </g>
-      <g fill="var(--sage)"><circle cx="120" cy="95" r="5"/><circle cx="300" cy="95" r="5"/><circle cx="320" cy="255" r="5"/><circle cx="95" cy="250" r="5"/></g>
+  <div class="map" aria-label="Plan schématique des quartiers desservis">
+    <svg viewBox="0 0 420 340" role="img" aria-labelledby="mapt"><title id="mapt">Zone desservie : 17e, 8e, 9e, 18e, Levallois-Perret et Clichy</title>
+      <ellipse cx="210" cy="172" rx="190" ry="150" fill="var(--sage-soft)"/>
+      <ellipse cx="210" cy="172" rx="190" ry="150" fill="none" stroke="var(--sage)" stroke-dasharray="2 6" stroke-width="1.2"/>
+      <circle cx="200" cy="165" r="70" fill="var(--blush)" opacity=".7"/>
+      <g fill="var(--sage-deep)"><circle cx="78" cy="118" r="5"/><circle cx="168" cy="62" r="5"/><circle cx="312" cy="88" r="5"/><circle cx="340" cy="210" r="5"/><circle cx="250" cy="268" r="5"/><circle cx="110" cy="236" r="5"/></g>
       <g font-family="Instrument Serif, Georgia, serif" font-size="17" fill="var(--ink)">
-        <text x="66" y="80">Clichy-Batignolles</text><text x="262" y="122">Épinettes</text><text x="298" y="282">La Fourche</text><text x="62" y="278">Villiers</text>
+        <text x="40" y="106">Levallois</text><text x="150" y="50">Clichy</text><text x="296" y="76">18e</text><text x="350" y="214">9e</text><text x="262" y="282">8e · Europe</text><text x="60" y="262">Ternes · Monceau</text>
       </g>
-      <circle cx="205" cy="180" r="9" fill="var(--blush-ink)"/>
-      <text x="205" y="208" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="19" fill="var(--ink)">Batignolles</text>
+      <circle cx="200" cy="165" r="9" fill="var(--blush-ink)"/>
+      <text x="200" y="194" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="20" fill="var(--ink)">Batignolles</text>
     </svg>
   </div>
 </div></section>
@@ -261,11 +254,11 @@ img{max-width:100%}
   <div>
     <p class="eyebrow">Réserver</p>
     <h2>Parlez-moi <em>de votre chien</em></h2>
-    <p class="lead" style="margin-top:16px">Remplissez le formulaire : il prépare votre message, que vous pouvez copier et m'envoyer par WhatsApp, SMS ou Instagram.</p>
+    <p class="lead" style="margin-top:16px">Appelez-moi ou écrivez-moi au 06 31 35 09 82. Vous pouvez aussi remplir le formulaire : il prépare votre message, à copier dans WhatsApp ou par SMS.</p>
     <div class="coord">
-      <div><b>Téléphone</b><span>numéro à ajouter</span></div>
+      <div><b>Téléphone</b><a href="tel:+33631350982">06 31 35 09 82</a></div>
       <div><b>Instagram</b><span>@lesbaladesdespattounes</span></div>
-      <div><b>Zone</b><span>Batignolles, Paris 17e et alentours</span></div>
+      <div><b>Zone</b><span>Paris 17e, 8e, 9e, 18e, Levallois et Clichy</span></div>
     </div>
   </div>
   <form id="f" novalidate>
@@ -287,7 +280,7 @@ img{max-width:100%}
   </form>
 </div></section>
 
-<footer><div class="wrap"><span class="brand">Les Balades des Pattounes</span><span>Promenade et visites de chiens · Batignolles, Paris 17e</span></div></footer>
+<footer><div class="wrap"><span class="brand">Les Balades des Pattounes</span><span>Promenade et visites de chiens · Paris 17e et alentours · 06 31 35 09 82</span></div></footer>
 
 <script>
 const f=document.getElementById('f'),out=document.getElementById('out'),cp=document.getElementById('copy');
