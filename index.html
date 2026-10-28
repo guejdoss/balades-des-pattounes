@@ -174,6 +174,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 footer .brand{font-size:20px;color:var(--ink)}
 @media (prefers-reduced-motion:no-preference){.seal{animation:float 6s ease-in-out infinite}@keyframes float{50%{transform:rotate(-5deg) translateY(-6px)}}}
 [hidden]{display:none!important}
+.tel{white-space:nowrap;color:inherit}
 img{max-width:100%}
 </style>
 </head>
@@ -231,7 +232,7 @@ img{max-width:100%}
     <h2>Choisissez <em>votre créneau</em></h2>
     <p class="lead" style="margin-top:16px">Commencez par la rencontre offerte de 20 minutes : chez vous ou dans un lieu de votre choix, pour faire connaissance avec votre chien.</p>
     <div class="coord">
-      <div><b>Téléphone</b><a href="tel:+33631350982">06 31 35 09 82</a></div>
+      <div><b>Téléphone</b><a class="tel" href="tel:+33631350982">06&nbsp;31&nbsp;35&nbsp;09&nbsp;82</a></div>
       <div><b>WhatsApp</b><a href="https://wa.me/33631350982" target="_blank" rel="noopener">M'écrire sur WhatsApp</a></div>
       <div><b>Instagram</b><span>@lesbaladesdespattounes</span></div>
       <div><b>Zone</b><span>Paris 17e, 8e, 9e, 18e, Levallois et Clichy</span></div>
@@ -396,7 +397,7 @@ img{max-width:100%}
 
 
 
-<footer><div class="wrap"><span class="brand">Les Balades des Pattounes</span><span>Promenade et visites de chiens · Paris 17e et alentours · 06 31 35 09 82</span></div></footer>
+<footer><div class="wrap"><span class="brand">Les Balades des Pattounes</span><span>Promenade et visites de chiens · Paris 17e et alentours · <a class="tel" href="tel:+33631350982">06&nbsp;31&nbsp;35&nbsp;09&nbsp;82</a></span></div></footer>
 
 <script src="vendor/leaflet/leaflet.js"></script>
 <script>
