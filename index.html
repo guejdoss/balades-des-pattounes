@@ -112,9 +112,10 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 
 .faq{max-width:780px;margin-top:36px}
 .galerie{padding-block:56px 0}
-.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.strip{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
 .strip img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px;display:block}
 .strip img:nth-child(odd){border-radius:999px 999px 18px 18px}
+@media (max-width:900px){.strip{grid-template-columns:repeat(4,1fr)}}
 @media (max-width:700px){.strip{grid-template-columns:1fr 1fr}}
 details{border-bottom:1px solid var(--line);padding-block:20px}
 summary{cursor:pointer;font-family:var(--display);font-size:24px;list-style:none;display:flex;justify-content:space-between;gap:16px}
@@ -250,7 +251,7 @@ img{max-width:100%}
 
 <section class="galerie" aria-label="Umi en photos"><div class="wrap">
   <div class="strip">
-    <img src="img/hero.jpg" alt="Umi souriante devant une porte" loading="lazy"><img src="img/jardin.jpg" alt="Umi de profil dans un jardin" loading="lazy"><img src="img/noeud.jpg" alt="Umi avec un nœud rose" loading="lazy"><img src="img/neige.jpg" alt="Umi dans la neige" loading="lazy"><img src="img/plage.jpg" alt="Umi sur la plage" loading="lazy"><img src="img/sieste.jpg" alt="Umi qui fait la sieste, la langue sortie" loading="lazy"><img src="img/piscine.jpg" alt="Umi qui sourit au bord d'une piscine" loading="lazy"><img src="img/balade-copain.jpg" alt="Umi qui joue avec un copain pendant une balade" loading="lazy">
+    <img src="img/hero.jpg" alt="Umi souriante devant une porte" loading="lazy"><img src="img/herbe.jpg" alt="Umi allongée dans l'herbe avec son jouet" loading="lazy"><img src="img/einat-chiot.jpg" style="object-position:50% 15%" alt="Einat qui tient Umi bébé dans ses bras" loading="lazy"><img src="img/noeud.jpg" alt="Umi avec un nœud rose" loading="lazy"><img src="img/noel.jpg" alt="Umi devant un sapin illuminé" loading="lazy"><img src="img/neige.jpg" alt="Umi dans la neige" loading="lazy"><img src="img/fauteuil.jpg" alt="Umi installée dans un fauteuil" loading="lazy"><img src="img/jardin.jpg" alt="Umi de profil dans un jardin" loading="lazy"><img src="img/bisou.jpg" alt="Umi qui fait un bisou à Einat" loading="lazy"><img src="img/plage.jpg" alt="Umi sur la plage" loading="lazy"><img src="img/chiot-porte.jpg" alt="Umi bébé assise devant une porte" loading="lazy"><img src="img/plaid.jpg" alt="Umi enroulée dans un plaid" loading="lazy"><img src="img/piscine.jpg" alt="Umi qui sourit au bord d'une piscine" loading="lazy"><img src="img/jeu-herbe.jpg" alt="Umi qui joue dans l'herbe" loading="lazy"><img src="img/calin.jpg" alt="Einat et Umi bébé qui font un câlin" loading="lazy"><img src="img/sieste.jpg" alt="Umi qui fait la sieste, la langue sortie" loading="lazy"><img src="img/dodo-canape.jpg" alt="Umi qui dort sur le canapé" loading="lazy"><img src="img/coussin.jpg" alt="Umi sur le dos dans son coussin" loading="lazy"><img src="img/balade-copain.jpg" alt="Umi qui joue avec un copain pendant une balade" loading="lazy"><img src="img/canape.jpg" alt="Umi allongée sur le canapé" loading="lazy">
   </div>
 </div></section>
 
