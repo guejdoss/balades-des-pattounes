@@ -79,6 +79,14 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .extras{margin-top:28px;color:var(--muted);font-size:15px}
 
 #deroulement{background:var(--paper);border-block:1px solid var(--line)}
+.besoins{background:var(--sage-soft)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:16px;margin-top:36px}
+.card{background:var(--paper);border-radius:22px;padding:24px 22px}
+.card h3{font-size:24px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15px}
+.conseils{margin-top:24px;background:var(--paper);border-radius:22px;padding:18px 22px}
+.conseils summary{cursor:pointer;font-weight:600}
+.conseils ul{margin:12px 0 0;padding-left:20px;color:var(--muted);font-size:15px;display:grid;gap:6px}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:36px;margin-top:48px}
 .step{display:grid;grid-template-columns:auto 1fr;column-gap:14px;row-gap:8px;align-items:baseline;align-content:start}
 .step p{grid-column:2}
@@ -161,7 +169,7 @@ img{max-width:100%}
 
 <nav aria-label="Navigation principale"><div class="wrap">
   <a class="brand" href="#top"><svg class="paw" viewBox="0 0 32 32" aria-hidden="true"><g><ellipse cx="16" cy="21" rx="7" ry="6"/><circle cx="7.5" cy="13" r="3"/><circle cx="12.5" cy="8" r="3"/><circle cx="19.5" cy="8" r="3"/><circle cx="24.5" cy="13" r="3"/></g></svg>Les Balades des Pattounes</a>
-  <div class="navlinks"><a href="#tarifs">Tarifs</a><a href="#deroulement">Comment ça marche</a><a href="#quartier">Quartiers</a><a href="#qui">Qui suis-je</a><a href="#faq">Questions</a></div>
+  <div class="navlinks"><a href="#tarifs">Tarifs</a><a href="#besoins">Bon à savoir</a><a href="#deroulement">Comment ça marche</a><a href="#quartier">Quartiers</a><a href="#qui">Qui suis-je</a><a href="#faq">Questions</a></div>
   <a class="btn" href="#contact">Réserver</a>
 </div></nav>
 
@@ -202,6 +210,28 @@ img{max-width:100%}
     </div>
   </div>
   <p class="extras">Deuxième chien du même foyer : +5 €. Garde de jour ou de nuit : sur demande, selon les disponibilités.</p>
+</div></section>
+
+<section class="besoins" id="besoins"><div class="wrap">
+  <p class="eyebrow">Bon à savoir</p>
+  <h2>Ce dont votre chien <em>a vraiment besoin</em></h2>
+  <p class="lead">Une sortie, ce n'est pas seulement faire ses besoins. Un chien équilibré a besoin de se dépenser, de réfléchir, de rencontrer et de se reposer. C'est ce que je cherche à lui apporter à chaque balade.</p>
+  <div class="cards">
+    <div class="card"><h3>Renifler</h3><p>Le flair est son premier sens. Renifler et mâcher l'occupent, canalisent son énergie et calment son stress. Je laisse toujours du temps pour explorer.</p></div>
+    <div class="card"><h3>Se dépenser</h3><p>Une dépense physique chaque jour est indispensable. La durée et le rythme dépendent de son âge, de sa race et de sa forme.</p></div>
+    <div class="card"><h3>Réfléchir</h3><p>L'ennui fatigue autant qu'il agace. Jeux, recherche de friandises, nouveaux parcours : stimuler sa tête l'épanouit.</p></div>
+    <div class="card"><h3>Rencontrer</h3><p>Le chien est un animal social. Des rencontres positives avec des chiens et des humains l'aident à rester confiant et à l'aise.</p></div>
+    <div class="card"><h3>Se reposer</h3><p>Un chien dort environ 12 h par jour, en plusieurs fois. Après la balade, il a besoin d'un coin calme à lui.</p></div>
+  </div>
+  <details class="conseils"><summary>Quelques conseils au quotidien</summary>
+    <ul>
+      <li>De l'eau fraîche et propre à disposition en permanence.</li>
+      <li>Au moins deux repas par jour plutôt qu'un seul, et pas d'effort intense juste après le repas.</li>
+      <li>En été, sortez aux heures fraîches et testez le bitume du dos de la main : s'il est trop chaud pour vous, il l'est pour ses coussinets.</li>
+      <li>Le « stop » et le rappel sont les deux ordres qui assurent sa sécurité en ville.</li>
+      <li>Une visite chez le vétérinaire au moins une fois par an, même s'il va bien.</li>
+    </ul>
+  </details>
 </div></section>
 
 <section id="deroulement"><div class="wrap">
