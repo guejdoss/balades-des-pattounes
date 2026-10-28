@@ -59,7 +59,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .facts span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blush-ink)}
 .hero-art{position:relative;max-width:420px;width:100%;justify-self:center}
 .arch{aspect-ratio:4/5;max-width:100%;border-radius:999px 999px 28px 28px;background:linear-gradient(170deg,var(--blush),var(--sage-soft));display:grid;place-items:center;text-align:center;color:var(--muted);font-family:var(--display);font-style:italic;font-size:22px;position:relative;overflow:hidden}
-.arch svg{width:22%;height:auto;opacity:.55;margin-bottom:6px}
+.arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%}
 .arch svg g{fill:var(--sage)}
 .arch small{display:block;margin-top:10px;font-family:var(--body);font-style:normal;font-size:13px}
 .seal{position:absolute;left:-18px;bottom:36px;width:112px;height:112px;border-radius:50%;background:var(--butter);color:var(--ink);display:grid;place-items:center;text-align:center;font-family:var(--display);font-size:18px;line-height:1.1;padding:12px;transform:rotate(-8deg);box-shadow:0 10px 30px rgba(38,50,48,.12)}
@@ -105,12 +105,17 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .about p.quote{font-family:var(--display);font-style:italic;font-size:26px;line-height:1.3;color:var(--ink)}
 @media (max-width:860px){.about .wrap{grid-template-columns:1fr}}
 .photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.ph{aspect-ratio:4/5;border-radius:22px;background:var(--paper);display:grid;place-items:center;text-align:center;font-size:13px;color:var(--muted);padding:12px;border:1px solid var(--line)}
+.ph{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:22px;background:var(--blush)}
 .ph:nth-child(1){border-radius:999px 999px 22px 22px;background:var(--blush)}
 .ph:nth-child(4){border-radius:22px 22px 999px 999px;background:var(--butter)}
 .ph:nth-child(even){transform:translateY(28px)}
 
 .faq{max-width:780px;margin-top:36px}
+.galerie{padding-block:56px 0}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.strip img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px;display:block}
+.strip img:nth-child(odd){border-radius:999px 999px 18px 18px}
+@media (max-width:700px){.strip{grid-template-columns:1fr 1fr}}
 details{border-bottom:1px solid var(--line);padding-block:20px}
 summary{cursor:pointer;font-family:var(--display);font-size:24px;list-style:none;display:flex;justify-content:space-between;gap:16px}
 summary::-webkit-details-marker{display:none}
@@ -160,12 +165,7 @@ img{max-width:100%}
     <div class="facts"><span>Rencontre offerte avant de commencer</span><span>Une photo après chaque sortie</span><span>Promenade individuelle</span></div>
   </div>
   <div class="hero-art">
-    <div class="arch" role="img" aria-label="Emplacement de la photo d'Umi">
-      <div>
-        <svg class="big-paw" viewBox="0 0 32 32" aria-hidden="true"><g><ellipse cx="16" cy="21" rx="7" ry="6"/><circle cx="7.5" cy="13" r="3"/><circle cx="12.5" cy="8" r="3"/><circle cx="19.5" cy="8" r="3"/><circle cx="24.5" cy="13" r="3"/></g></svg>
-        Photo d'Umi<small>à venir</small>
-      </div>
-    </div>
+    <div class="arch"><img src="img/hero.jpg" alt="Umi, bergère américaine, assise devant une porte et toute souriante" width="768" height="1024"></div>
     <div class="seal">1re rencontre offerte<em>20 min chez vous</em></div>
   </div>
 </div></header>
@@ -237,14 +237,20 @@ img{max-width:100%}
 </div></section>
 
 <section class="about" id="qui"><div class="wrap">
-  <div class="photos" aria-label="Emplacements des photos d'Umi">
-    <div class="ph">Umi en balade</div><div class="ph">Umi de face</div><div class="ph">Einat et Umi</div><div class="ph">Umi au square</div>
+  <div class="photos">
+    <img class="ph" src="img/einat-umi.jpg" alt="Einat et Umi" loading="lazy"><img class="ph" src="img/louvre.jpg" alt="Umi en laisse devant la pyramide du Louvre" loading="lazy"><img class="ph" src="img/balade-copain.jpg" alt="Umi qui joue avec un copain pendant une balade" loading="lazy"><img class="ph" src="img/plage.jpg" alt="Umi sur la plage" loading="lazy">
   </div>
   <div>
     <p class="eyebrow">Qui suis-je</p>
     <h2>Einat, <em>et sa coéquipière Umi</em></h2>
     <p>Je vis avec Umi, une bergère américaine pleine d'énergie. Je sais ce qu'un chien attend d'une vraie sortie, et je suis attentive aux consignes de chacun.</p>
     <p class="quote">« J'habite le quartier, je suis disponible en journée, et je traite votre chien comme le mien. »</p>
+  </div>
+</div></section>
+
+<section class="galerie" aria-label="Umi en photos"><div class="wrap">
+  <div class="strip">
+    <img src="img/canape.jpg" alt="Umi qui penche la tête sur le canapé" loading="lazy"><img src="img/piscine.jpg" alt="Umi qui sourit au bord d'une piscine" loading="lazy"><img src="img/plage-couchee.jpg" alt="Umi allongée sur le sable" loading="lazy"><img src="img/calin.jpg" alt="Umi blottie dans une couverture" loading="lazy">
   </div>
 </div></section>
 
