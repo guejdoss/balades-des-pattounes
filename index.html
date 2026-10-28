@@ -111,6 +111,11 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .ph:nth-child(even){transform:translateY(28px)}
 
 .faq{max-width:780px;margin-top:36px}
+.videos{padding-block:72px 0}
+.vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.vgrid video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:18px;display:block;background:var(--sage-soft)}
+.vgrid video:nth-child(even){border-radius:999px 999px 18px 18px}
+@media (max-width:700px){.vgrid{grid-template-columns:1fr 1fr}}
 .galerie{padding-block:56px 0}
 .strip{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
 .strip img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px;display:block}
@@ -169,7 +174,7 @@ img{max-width:100%}
     <div class="facts"><span>Rencontre offerte avant de commencer</span><span>Photos et vidéos après chaque sortie</span><span>Promenade individuelle</span></div>
   </div>
   <div class="hero-art">
-    <div class="arch"><img src="img/cafe.jpg" alt="Umi couchée sous les chaises d'une terrasse de café parisienne" width="735" height="1100"></div>
+    <div class="arch"><img src="img/piscine.jpg" alt="Umi qui tire la langue au bord d'une piscine" width="359" height="540" style="object-position:50% 60%"></div>
     <div class="seal">1re rencontre offerte<em>20 min, chez vous ou ailleurs</em></div>
   </div>
 </div></header>
@@ -247,14 +252,22 @@ img{max-width:100%}
   <div>
     <p class="eyebrow">Qui suis-je</p>
     <h2>Einat, <em>et sa coéquipière Umi</em></h2>
-    <p>Je vis avec Umi, une bergère américaine pleine d'énergie. Je sais ce qu'un chien attend d'une vraie sortie, et je suis attentive aux consignes de chacun.</p>
+    <p>J'ai 30 ans et je vis avec Umi, une bergère américaine pleine d'énergie. Depuis son adoption, je suis les cours d'un éducateur canin pour comprendre la psychologie du chien, ses besoins physiques et ses besoins mentaux. Je sais ce qu'un chien attend d'une vraie sortie, et je suis attentive aux consignes de chacun.</p>
     <p class="quote">« J'habite le quartier, je suis disponible en journée, et je traite votre chien comme le mien. »</p>
   </div>
 </div></section>
 
 <section class="galerie" aria-label="Umi en photos"><div class="wrap">
   <div class="strip">
-    <img src="img/hero.jpg" alt="Umi souriante devant une porte" loading="lazy"><img src="img/herbe.jpg" alt="Umi allongée dans l'herbe avec son jouet" loading="lazy"><img src="img/einat-chiot.jpg" style="object-position:50% 15%" alt="Einat qui tient Umi bébé dans ses bras" loading="lazy"><img src="img/noeud.jpg" alt="Umi avec un nœud rose" loading="lazy"><img src="img/noel.jpg" alt="Umi devant un sapin illuminé" loading="lazy"><img src="img/neige.jpg" alt="Umi dans la neige" loading="lazy"><img src="img/fauteuil.jpg" alt="Umi installée dans un fauteuil" loading="lazy"><img src="img/jardin.jpg" alt="Umi de profil dans un jardin" loading="lazy"><img src="img/bisou.jpg" alt="Umi qui fait un bisou à Einat" loading="lazy"><img src="img/plage.jpg" alt="Umi sur la plage" loading="lazy"><img src="img/chiot-porte.jpg" alt="Umi bébé assise devant une porte" loading="lazy"><img src="img/plaid.jpg" alt="Umi enroulée dans un plaid" loading="lazy"><img src="img/piscine.jpg" alt="Umi qui sourit au bord d'une piscine" loading="lazy"><img src="img/jeu-herbe.jpg" alt="Umi qui joue dans l'herbe" loading="lazy"><img src="img/calin.jpg" alt="Einat et Umi bébé qui font un câlin" loading="lazy"><img src="img/sieste.jpg" alt="Umi qui fait la sieste, la langue sortie" loading="lazy"><img src="img/dodo-canape.jpg" alt="Umi qui dort sur le canapé" loading="lazy"><img src="img/coussin.jpg" alt="Umi sur le dos dans son coussin" loading="lazy"><img src="img/balade-copain.jpg" alt="Umi qui joue avec un copain pendant une balade" loading="lazy"><img src="img/canape.jpg" alt="Umi allongée sur le canapé" loading="lazy">
+    <img src="img/hero.jpg" alt="Umi souriante devant une porte" loading="lazy"><img src="img/herbe.jpg" alt="Umi allongée dans l'herbe avec son jouet" loading="lazy"><img src="img/einat-chiot.jpg" style="object-position:50% 15%" alt="Einat qui tient Umi bébé dans ses bras" loading="lazy"><img src="img/noeud.jpg" alt="Umi avec un nœud rose" loading="lazy"><img src="img/noel.jpg" alt="Umi devant un sapin illuminé" loading="lazy"><img src="img/neige.jpg" alt="Umi dans la neige" loading="lazy"><img src="img/fauteuil.jpg" alt="Umi installée dans un fauteuil" loading="lazy"><img src="img/jardin.jpg" alt="Umi de profil dans un jardin" loading="lazy"><img src="img/bisou.jpg" alt="Umi qui fait un bisou à Einat" loading="lazy"><img src="img/plage.jpg" alt="Umi sur la plage" loading="lazy"><img src="img/chiot-porte.jpg" alt="Umi bébé assise devant une porte" loading="lazy"><img src="img/plaid.jpg" alt="Umi enroulée dans un plaid" loading="lazy"><img src="img/cafe.jpg" alt="Umi couchée sous les chaises d'une terrasse de café" loading="lazy"><img src="img/jeu-herbe.jpg" alt="Umi qui joue dans l'herbe" loading="lazy"><img src="img/calin.jpg" alt="Einat et Umi bébé qui font un câlin" loading="lazy"><img src="img/sieste.jpg" alt="Umi qui fait la sieste, la langue sortie" loading="lazy"><img src="img/dodo-canape.jpg" alt="Umi qui dort sur le canapé" loading="lazy"><img src="img/coussin.jpg" alt="Umi sur le dos dans son coussin" loading="lazy"><img src="img/balade-copain.jpg" alt="Umi qui joue avec un copain pendant une balade" loading="lazy"><img src="img/canape.jpg" alt="Umi allongée sur le canapé" loading="lazy"><img src="img/sourire-canape.jpg" alt="Umi qui sourit sur le canapé" loading="lazy"><img src="img/einat-terrasse.jpg" alt="Einat et Umi bébé en terrasse" loading="lazy"><img src="img/glace.jpg" alt="Umi qui goûte une glace pour chien" loading="lazy"><img src="img/roule-herbe.jpg" alt="Umi qui se roule sur le dos dans l'herbe" loading="lazy"><img src="img/einat-panier.jpg" alt="Einat qui fait un câlin à Umi bébé" loading="lazy">
+  </div>
+</div></section>
+
+<section class="videos" aria-label="Umi en vidéo"><div class="wrap">
+  <p class="eyebrow">En vidéo</p>
+  <h2>Umi, <em>dans son élément</em></h2>
+  <div class="vgrid">
+    <video src="vid/plongeon.mp4" poster="vid/plongeon.jpg" muted loop playsinline preload="none" aria-label="Umi qui plonge dans le lac"></video><video src="vid/saut-lac.mp4" poster="vid/saut-lac.jpg" muted loop playsinline preload="none" aria-label="Umi qui saute dans le lac"></video><video src="vid/piscine.mp4" poster="vid/piscine.jpg" muted loop playsinline preload="none" aria-label="Umi qui joue dans sa piscine"></video><video src="vid/roulade.mp4" poster="vid/roulade.jpg" muted loop playsinline preload="none" aria-label="Umi qui se roule dans l'herbe"></video><video src="vid/baton-saut.mp4" poster="vid/baton-saut.jpg" muted loop playsinline preload="none" aria-label="Umi qui sort de l'eau avec son bâton"></video><video src="vid/copain.mp4" poster="vid/copain.jpg" muted loop playsinline preload="none" aria-label="Umi qui joue avec un copain"></video><video src="vid/baton.mp4" poster="vid/baton.jpg" muted loop playsinline preload="none" aria-label="Umi qui rapporte un bâton"></video><video src="vid/nage.mp4" poster="vid/nage.jpg" muted loop playsinline preload="none" aria-label="Umi qui nage dans le lac"></video>
   </div>
 </div></section>
 
@@ -361,6 +374,14 @@ if(cfg.calUsername && !inArtifact){
   show('rencontre-chien');
   Cal("ui", { theme: "light", cssVarsPerTheme: { light: { "cal-brand": "#5f8170" } }, hideEventTypeDetails: false, layout: "month_view" });
   setTimeout(()=>{ if(!document.querySelector('#booking iframe')){ f.hidden=false; choix.hidden=true; } }, 8000);
+}
+
+// Vidéos : lecture muette quand elles sont à l'écran.
+const vids=document.querySelectorAll('.vgrid video');
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;
+    if(e.isIntersecting){v.preload='auto';v.play().catch(()=>{});}else v.pause();}),{threshold:.35});
+  vids.forEach(v=>io.observe(v));
 }
 
 // Carte : vraie carte sur le site en ligne, schéma dans l'aperçu.
