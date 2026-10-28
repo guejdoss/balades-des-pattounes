@@ -89,6 +89,17 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .conseils{margin-top:24px;background:var(--paper);border-radius:22px;padding:18px 22px}
 .conseils summary{cursor:pointer;font-weight:600}
 .conseils ul{margin:12px 0 0;padding-left:20px;color:var(--muted);font-size:15px;display:grid;gap:6px}
+.ic{width:44px;height:44px;padding:9px;border-radius:50%;background:var(--sage-soft);fill:none;stroke:var(--sage-deep);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:14px;display:block}
+.besoins .card .ic{background:var(--blush)}
+.process{padding-block:48px}
+.process .steps{grid-template-columns:repeat(4,1fr);gap:24px;margin-top:20px}
+.process .step h3{font-size:21px}
+@media (max-width:800px){.process .steps{grid-template-columns:1fr 1fr}}
+.copains{padding-block:72px 0}
+.pals{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:16px;margin-top:28px}
+.pal{border-radius:22px;padding:24px;background:var(--paper);border:1px solid var(--line)}
+.pal-soon{border:1.5px dashed var(--sage);background:transparent}
+.pal h3{font-size:22px;margin-bottom:6px}.pal p{color:var(--muted);font-size:15px}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:36px;margin-top:48px}
 .step{display:grid;grid-template-columns:auto 1fr;column-gap:14px;row-gap:8px;align-items:baseline;align-content:start}
 .step p{grid-column:2}
@@ -171,20 +182,20 @@ img{max-width:100%}
 
 <nav aria-label="Navigation principale"><div class="wrap">
   <a class="brand" href="#top"><svg class="paw" viewBox="0 0 32 32" aria-hidden="true"><g><ellipse cx="16" cy="21" rx="7" ry="6"/><circle cx="7.5" cy="13" r="3"/><circle cx="12.5" cy="8" r="3"/><circle cx="19.5" cy="8" r="3"/><circle cx="24.5" cy="13" r="3"/></g></svg>Les Balades des Pattounes</a>
-  <div class="navlinks"><a href="#tarifs">Tarifs</a><a href="#besoins">Bon à savoir</a><a href="#deroulement">Comment ça marche</a><a href="#quartier">Quartiers</a><a href="#qui">Qui suis-je</a><a href="#faq">Questions</a></div>
+  <div class="navlinks"><a href="#tarifs">Tarifs</a><a href="#besoins">Bon à savoir</a><a href="#copains">Les copains</a><a href="#quartier">Quartiers</a><a href="#qui">Qui suis-je</a><a href="#faq">Questions</a></div>
   <a class="btn" href="#contact">Réserver</a>
 </div></nav>
 
 <header class="hero" id="top"><div class="wrap">
   <div>
     <p class="eyebrow">Promenade et visites de chiens · Paris 17e et alentours</p>
-    <h1>Votre chien se promène <em>avec Umi</em> pendant que vous travaillez.</h1>
+    <h1>Votre chien entre <em>de bonnes mains</em> pendant que vous travaillez.</h1>
     <p class="lead">Je m'appelle Einat et je vis aux Batignolles avec Umi, ma bergère américaine. Je promène votre chien dans votre quartier, je passe le voir quand vous rentrez tard, et je vous envoie des photos et des vidéos après chaque sortie.</p>
     <div class="cta"><a class="btn" href="#contact">Demander la rencontre offerte</a><a class="btn ghost" href="#tarifs">Voir les tarifs</a></div>
     <div class="facts"><span>Rencontre offerte avant de commencer</span><span>Photos et vidéos après chaque sortie</span><span>Promenade individuelle</span></div>
   </div>
   <div class="hero-art">
-    <div class="arch"><img src="img/couverture.jpg" alt="Umi qui sourit, langue sortie, au bord d'une piscine" width="799" height="1200" style="object-position:50% 45%"></div>
+    <div class="arch"><img src="img/einat-terrasse.jpg" alt="Einat qui tient Umi dans ses bras en terrasse" width="825" height="1100" style="object-position:50% 40%"></div>
     <div class="seal">1re rencontre offerte<em>20 min, chez vous ou ailleurs</em></div>
   </div>
 </div></header>
@@ -212,118 +223,6 @@ img{max-width:100%}
     </div>
   </div>
   <p class="extras">Deuxième chien du même foyer : +5 €. Garde de jour ou de nuit : sur demande, selon les disponibilités.</p>
-</div></section>
-
-<section class="besoins" id="besoins"><div class="wrap">
-  <p class="eyebrow">Bon à savoir</p>
-  <h2>Ce dont votre chien <em>a vraiment besoin</em></h2>
-  <p class="lead">Une sortie, ce n'est pas seulement faire ses besoins. Le bien-être mental d'un chien compte autant que sa santé physique : il a besoin de se dépenser, de réfléchir, de rencontrer, de se sentir en sécurité et de se reposer. C'est ce que j'ai appris avec Umi, et ce que je cherche à apporter à chaque balade.</p>
-  <div class="cards">
-    <div class="card"><h3>Renifler</h3><p>Le flair est son premier sens. Renifler et mâcher l'occupent, canalisent son énergie et calment son stress. Je laisse toujours du temps pour explorer.</p></div>
-    <div class="card"><h3>Se dépenser</h3><p>Une dépense physique chaque jour est indispensable. La durée et le rythme dépendent de son âge, de sa race et de sa forme.</p></div>
-    <div class="card"><h3>Réfléchir</h3><p>L'ennui fatigue autant qu'il agace. Jeux, recherche de friandises, nouveaux parcours : stimuler sa tête l'épanouit.</p></div>
-    <div class="card"><h3>Rencontrer</h3><p>Le chien est un animal social. Des rencontres positives avec des chiens et des humains l'aident à rester confiant et à l'aise.</p></div>
-    <div class="card"><h3>Se sentir en sécurité</h3><p>Peurs des bruits, des humains ou des autres chiens : elles se travaillent en douceur, à son rythme, sans jamais le forcer. Je n'utilise que l'éducation positive : je récompense, je ne punis pas.</p></div>
-    <div class="card"><h3>Se reposer</h3><p>Un chien dort environ 12 h par jour, en plusieurs fois. Après la balade, il a besoin d'un coin calme à lui.</p></div>
-  </div>
-  <details class="conseils"><summary>Quelques conseils au quotidien</summary>
-    <ul>
-      <li>De l'eau fraîche et propre à disposition en permanence.</li>
-      <li>Au moins deux repas par jour plutôt qu'un seul, et pas d'effort intense juste après le repas.</li>
-      <li>En été, sortez aux heures fraîches et testez le bitume du dos de la main : s'il est trop chaud pour vous, il l'est pour ses coussinets.</li>
-      <li>Le « stop » et le rappel sont les deux ordres qui assurent sa sécurité en ville.</li>
-      <li>Variez les surfaces et les parcours (herbe, sable, graviers, nouvelles rues) : c'est un vrai éveil pour ses sens.</li>
-      <li>Peurs, anxiété quand il reste seul, destructions, hyperactivité : ce sont des signes de mal-être, pas de « bêtise ». Parlez-en tôt à un éducateur ou à votre vétérinaire.</li>
-      <li>Votre sérénité compte aussi : un chien ressent le stress de son maître. Personne ne sait tout dès le premier jour.</li>
-      <li>Une visite chez le vétérinaire au moins une fois par an, même s'il va bien.</li>
-    </ul>
-  </details>
-</div></section>
-
-<section id="deroulement"><div class="wrap">
-  <p class="eyebrow">Comment ça marche</p>
-  <h2>De la rencontre <em>à la première balade</em></h2>
-  <div class="steps">
-    <div class="step"><span class="n">1</span><h3>Vous m'écrivez</h3><p>Par le formulaire ou par message. Je réponds dans la journée.</p></div>
-    <div class="step"><span class="n">2</span><h3>On se rencontre</h3><p>20 minutes offertes, chez vous ou dans un lieu de votre choix. Je fais connaissance avec votre chien et on parle de vos attentes, de ses besoins et des vôtres.</p></div>
-    <div class="step"><span class="n">3</span><h3>Première balade</h3><p>Je passe à l'heure convenue, chaque semaine ou ponctuellement.</p></div>
-    <div class="step"><span class="n">4</span><h3>Photos, vidéos et nouvelles</h3><p>Après chaque sortie : des photos, une petite vidéo, la durée, et comment ça s'est passé.</p></div>
-  </div>
-</div></section>
-
-<section class="quartier" id="quartier"><div class="wrap">
-  <div>
-    <p class="eyebrow">Quartiers desservis</p>
-    <h2>Le 17e <em>et tout autour</em></h2>
-    <p class="lead" style="margin-top:16px">J'habite les Batignolles et je me déplace à pied ou en métro dans tout le nord-ouest de Paris. Votre chien, lui, ne quitte jamais son quartier.</p>
-    <ul class="parks">
-      <li><span>Batignolles · Épinettes · Clichy-Batignolles · Brochant</span><span>17e</span></li>
-      <li><span>Ternes · Monceau · Villiers · Pereire</span><span>17e · 8e</span></li>
-      <li><span>La Fourche · Guy-Môquet · Lamarck · Abbesses</span><span>18e</span></li>
-      <li><span>Europe · Saint-Lazare · Rome · Pigalle</span><span>8e · 9e</span></li>
-      <li><span>Levallois-Perret · Clichy</span><span>92</span></li>
-    </ul>
-    <p class="extras">Vous êtes un peu plus loin ? Écrivez-moi quand même.</p>
-  </div>
-  <div class="map" aria-label="Carte des quartiers desservis">
-    <div id="carte" hidden></div>
-    <svg id="carte-schema" viewBox="0 0 420 340" role="img" aria-labelledby="mapt"><title id="mapt">Zone desservie : 17e, 8e, 9e, 18e, Levallois-Perret et Clichy</title>
-      <ellipse cx="210" cy="172" rx="190" ry="150" fill="var(--sage-soft)"/>
-      <ellipse cx="210" cy="172" rx="190" ry="150" fill="none" stroke="var(--sage)" stroke-dasharray="2 6" stroke-width="1.2"/>
-      <circle cx="200" cy="165" r="70" fill="var(--blush)" opacity=".7"/>
-      <g fill="var(--sage-deep)"><circle cx="78" cy="118" r="5"/><circle cx="168" cy="62" r="5"/><circle cx="312" cy="88" r="5"/><circle cx="340" cy="210" r="5"/><circle cx="250" cy="268" r="5"/><circle cx="110" cy="236" r="5"/></g>
-      <g font-family="Instrument Serif, Georgia, serif" font-size="17" fill="var(--ink)">
-        <text x="40" y="106">Levallois</text><text x="150" y="50">Clichy</text><text x="296" y="76">18e</text><text x="350" y="214">9e</text><text x="262" y="282">8e · Europe</text><text x="60" y="262">Ternes · Monceau</text>
-      </g>
-      <circle cx="200" cy="165" r="9" fill="var(--blush-ink)"/>
-      <text x="200" y="194" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="20" fill="var(--ink)">Batignolles</text>
-    </svg>
-  </div>
-</div></section>
-
-<section class="about" id="qui"><div class="wrap">
-  <div class="photos">
-    <img class="ph" src="img/einat-umi.jpg" alt="Einat et Umi" loading="lazy"><img class="ph" src="img/louvre.jpg" alt="Umi en laisse devant la pyramide du Louvre" loading="lazy"><img class="ph" src="img/lac.jpg" alt="Umi trempée au bord du lac du bois de Boulogne" loading="lazy"><img class="ph" src="img/voiture.jpg" alt="Umi qui donne la patte, toute souriante" loading="lazy">
-  </div>
-  <div>
-    <p class="eyebrow">Qui suis-je</p>
-    <h2>Einat, <em>et sa coéquipière Umi</em></h2>
-    <p>J'ai 30 ans et je vis avec Umi, une bergère américaine pleine d'énergie. Depuis son adoption, je suis les cours d'un éducateur canin pour comprendre la psychologie du chien, ses besoins physiques et ses besoins mentaux. Je sais ce qu'un chien attend d'une vraie sortie, et je suis attentive aux consignes de chacun.</p>
-    <p class="quote">« J'habite le quartier, je suis disponible en journée, et je traite votre chien comme le mien. »</p>
-  </div>
-</div></section>
-
-<section class="galerie" aria-label="Umi en photos"><div class="wrap">
-  <div class="strip">
-    <img src="img/hero.jpg" alt="Umi souriante devant une porte" loading="lazy"><img src="img/herbe.jpg" alt="Umi allongée dans l'herbe avec son jouet" loading="lazy"><img src="img/einat-chiot.jpg" style="object-position:50% 15%" alt="Einat qui tient Umi bébé dans ses bras" loading="lazy"><img src="img/noeud.jpg" alt="Umi avec un nœud rose" loading="lazy"><img src="img/noel.jpg" alt="Umi devant un sapin illuminé" loading="lazy"><img src="img/neige.jpg" alt="Umi dans la neige" loading="lazy"><img src="img/fauteuil.jpg" alt="Umi installée dans un fauteuil" loading="lazy"><img src="img/jardin.jpg" alt="Umi de profil dans un jardin" loading="lazy"><img src="img/bisou.jpg" alt="Umi qui fait un bisou à Einat" loading="lazy"><img src="img/plage.jpg" alt="Umi sur la plage" loading="lazy"><img src="img/chiot-porte.jpg" alt="Umi bébé assise devant une porte" loading="lazy"><img src="img/plaid.jpg" alt="Umi enroulée dans un plaid" loading="lazy"><img src="img/cafe.jpg" alt="Umi couchée sous les chaises d'une terrasse de café" loading="lazy"><img src="img/jeu-herbe.jpg" alt="Umi qui joue dans l'herbe" loading="lazy"><img src="img/calin.jpg" alt="Einat et Umi bébé qui font un câlin" loading="lazy"><img src="img/sieste.jpg" alt="Umi qui fait la sieste, la langue sortie" loading="lazy"><img src="img/langue.jpg" alt="Umi qui se lèche le museau au bord d'une piscine" loading="lazy"><img src="img/coussin.jpg" alt="Umi sur le dos dans son coussin" loading="lazy"><img src="img/balade-copain.jpg" alt="Umi qui joue avec un copain pendant une balade" loading="lazy"><img src="img/canape.jpg" alt="Umi allongée sur le canapé" loading="lazy"><img src="img/sourire-canape.jpg" alt="Umi qui sourit sur le canapé" loading="lazy"><img src="img/einat-terrasse.jpg" alt="Einat et Umi bébé en terrasse" loading="lazy"><img src="img/glace.jpg" alt="Umi qui goûte une glace pour chien" loading="lazy"><img src="img/roule-herbe.jpg" alt="Umi qui se roule sur le dos dans l'herbe" loading="lazy"><img src="img/einat-panier.jpg" alt="Einat qui fait un câlin à Umi bébé" loading="lazy">
-  </div>
-</div></section>
-
-<section class="videos" aria-label="Umi en vidéo"><div class="wrap">
-  <p class="eyebrow">En vidéo</p>
-  <h2>Umi, <em>dans son élément</em></h2>
-  <div class="vgrid">
-    <video src="vid/plongeon.mp4" poster="vid/plongeon.jpg" muted loop playsinline preload="none" aria-label="Umi qui plonge dans le lac"></video><video src="vid/saut-lac.mp4" poster="vid/saut-lac.jpg" muted loop playsinline preload="none" aria-label="Umi qui saute dans le lac"></video><video src="vid/piscine.mp4" poster="vid/piscine.jpg" muted loop playsinline preload="none" aria-label="Umi qui joue dans sa piscine"></video><video src="vid/roulade.mp4" poster="vid/roulade.jpg" muted loop playsinline preload="none" aria-label="Umi qui se roule dans l'herbe"></video><video src="vid/baton-saut.mp4" poster="vid/baton-saut.jpg" muted loop playsinline preload="none" aria-label="Umi qui sort de l'eau avec son bâton"></video><video src="vid/copain.mp4" poster="vid/copain.jpg" muted loop playsinline preload="none" aria-label="Umi qui joue avec un copain"></video><video src="vid/baton.mp4" poster="vid/baton.jpg" muted loop playsinline preload="none" aria-label="Umi qui rapporte un bâton"></video><video src="vid/nage.mp4" poster="vid/nage.jpg" muted loop playsinline preload="none" aria-label="Umi qui nage dans le lac"></video>
-  </div>
-</div></section>
-
-<section id="faq"><div class="wrap">
-  <p class="eyebrow">Questions fréquentes</p>
-  <h2>Avant de me confier <em>votre chien</em></h2>
-  <div class="faq">
-    <details><summary>Promenez-vous plusieurs chiens en même temps ?</summary><p>Non, sauf les chiens d'un même foyer. Chaque promenade est individuelle.</p></details>
-    <details><summary>Comment se passe la remise des clés ?</summary><p>On en parle lors de la rencontre : double des clés, boîte à clés ou remise en main propre. Les clés sont rangées sans étiquette d'adresse.</p></details>
-    <details><summary>Et si mon chien tire en laisse ou est réactif ?</summary><p>Dites-le-moi dès le premier message. On choisit ensemble les horaires et les lieux les plus calmes, et la rencontre sert à vérifier que tout se passe bien.</p></details>
-    <details><summary>Que se passe-t-il en cas de pépin ?</summary><p>Je garde sur moi le numéro de votre vétérinaire et le vôtre. Je vous préviens immédiatement et je suis vos consignes.</p></details>
-    <details><summary>Mon chien se promène-t-il avec Umi ?</summary><p>Seulement si vous le souhaitez et si le courant passe entre eux lors de la rencontre. Sinon, votre chien a la balade pour lui tout seul.</p></details>
-    <details><summary>Le lâchez-vous en liberté ?</summary><p>Jamais sans votre accord, et uniquement dans les espaces où c'est autorisé, quand je suis sûre de son rappel.</p></details>
-    <details><summary>Mon chien est un chiot, ou il est âgé : c'est possible ?</summary><p>Oui. J'adapte la durée et le rythme : des sorties courtes et rassurantes pour les chiots, une balade tranquille pour les seniors.</p></details>
-    <details><summary>Et quand il pleut ou qu'il fait très chaud ?</summary><p>On sort quand même sous la pluie, et je l'essuie en rentrant. Par fortes chaleurs, je décale la sortie aux heures fraîches et je prévois de l'eau.</p></details>
-    <details><summary>Lui donnez-vous des friandises ?</summary><p>Uniquement ce que vous m'autorisez. Allergies, régime ou interdits : on le note ensemble lors de la rencontre.</p></details>
-    <details><summary>Que faut-il me laisser ?</summary><p>Sa laisse ou son harnais, des sacs, ses friandises si besoin, et ses vaccins à jour.</p></details>
-    <details><summary>Comment régler, et si je dois annuler ?</summary><p>Le règlement se fait sur place, à la séance ou au forfait. Pour annuler, prévenez-moi au moins 24 h à l'avance, sans frais.</p></details>
-    <details><summary>Gardez-vous les chiens pendant les vacances ?</summary><p>Pour la garde de jour ou de nuit, écrivez-moi en précisant les dates : je vous réponds selon mes disponibilités. Les vacances scolaires partent vite, pensez à réserver tôt.</p></details>
-  </div>
 </div></section>
 
 <section class="contact" id="contact"><div class="wrap">
@@ -370,6 +269,132 @@ img{max-width:100%}
     </form>
   </div>
 </div></section>
+
+<section id="deroulement" class="process"><div class="wrap">
+  <p class="eyebrow">Comment ça marche</p>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><h3>Vous réservez</h3><p>Un créneau dans l'agenda ou un message.</p></div>
+    <div class="step"><span class="n">2</span><h3>On se rencontre</h3><p>20 min offertes, chez vous ou ailleurs.</p></div>
+    <div class="step"><span class="n">3</span><h3>Première balade</h3><p>Ponctuelle ou chaque semaine.</p></div>
+    <div class="step"><span class="n">4</span><h3>Des nouvelles</h3><p>Photos et vidéos après chaque sortie.</p></div>
+  </div>
+</div></section>
+
+<section class="besoins" id="besoins"><div class="wrap">
+  <p class="eyebrow">Bon à savoir</p>
+  <h2>Ce dont votre chien <em>a vraiment besoin</em></h2>
+  <p class="lead">Une sortie, ce n'est pas seulement faire ses besoins. Le bien-être mental d'un chien compte autant que sa santé physique : il a besoin de se dépenser, de réfléchir, de rencontrer, de se sentir en sécurité et de se reposer. C'est ce que j'ai appris avec Umi, et ce que je cherche à apporter à chaque balade.</p>
+  <div class="cards">
+    <div class="card"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><path d="M12 30c5-5 5-9 0-15M20 30c5-5 5-9 0-15M28 30c5-5 5-9 0-15"/></svg><h3>Renifler</h3><p>Le flair est son premier sens. Renifler et mâcher l'occupent, canalisent son énergie et calment son stress. Je laisse toujours du temps pour explorer.</p></div>
+    <div class="card"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="11"/><path d="M10 16c6 2 14 2 20 0M10 24c6-2 14-2 20 0"/></svg><h3>Se dépenser</h3><p>Une dépense physique chaque jour est indispensable. La durée et le rythme dépendent de son âge, de sa race et de sa forme.</p></div>
+    <div class="card"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><path d="M15 27c0-4-5-6-5-12a10 10 0 0 1 20 0c0 6-5 8-5 12z"/><path d="M16 31h8M17 34h6"/></svg><h3>Réfléchir</h3><p>L'ennui fatigue autant qu'il agace. Jeux, recherche de friandises, nouveaux parcours : stimuler sa tête l'épanouit.</p></div>
+    <div class="card"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><circle cx="15" cy="20" r="8"/><circle cx="25" cy="20" r="8"/></svg><h3>Rencontrer</h3><p>Le chien est un animal social. Des rencontres positives avec des chiens et des humains l'aident à rester confiant et à l'aise.</p></div>
+    <div class="card"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 7l11 4v8c0 7-5 12-11 14-6-2-11-7-11-14v-8z"/><path d="M15 20l4 4 6-7"/></svg><h3>Se sentir en sécurité</h3><p>Peurs des bruits, des humains ou des autres chiens : elles se travaillent en douceur, à son rythme, sans jamais le forcer. Je n'utilise que l'éducation positive : je récompense, je ne punis pas.</p></div>
+    <div class="card"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><path d="M27 25a11 11 0 0 1-12-15 11 11 0 1 0 12 15z"/></svg><h3>Se reposer</h3><p>Un chien dort environ 12 h par jour, en plusieurs fois. Après la balade, il a besoin d'un coin calme à lui.</p></div>
+  </div>
+  <details class="conseils"><summary>Quelques conseils au quotidien</summary>
+    <ul>
+      <li>De l'eau fraîche et propre à disposition en permanence.</li>
+      <li>Au moins deux repas par jour plutôt qu'un seul, et pas d'effort intense juste après le repas.</li>
+      <li>En été, sortez aux heures fraîches et testez le bitume du dos de la main : s'il est trop chaud pour vous, il l'est pour ses coussinets.</li>
+      <li>Le « stop » et le rappel sont les deux ordres qui assurent sa sécurité en ville.</li>
+      <li>Variez les surfaces et les parcours (herbe, sable, graviers, nouvelles rues) : c'est un vrai éveil pour ses sens.</li>
+      <li>Peurs, anxiété quand il reste seul, destructions, hyperactivité : ce sont des signes de mal-être, pas de « bêtise ». Parlez-en tôt à un éducateur ou à votre vétérinaire.</li>
+      <li>Votre sérénité compte aussi : un chien ressent le stress de son maître. Personne ne sait tout dès le premier jour.</li>
+      <li>Une visite chez le vétérinaire au moins une fois par an, même s'il va bien.</li>
+    </ul>
+  </details>
+</div></section>
+
+
+
+
+
+<section class="copains" id="copains"><div class="wrap">
+  <p class="eyebrow">Ils se baladent avec moi</p>
+  <h2>Les copains <em>des Pattounes</em></h2>
+  <p class="lead" style="margin-top:16px">Chaque chien que je promène ou que je garde a sa place ici : son prénom, sa photo et le mot de son humain.</p>
+  <div class="pals">
+    <div class="pal pal-soon"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><ellipse cx="20" cy="25" rx="7" ry="6"/><circle cx="11" cy="17" r="3"/><circle cx="16" cy="11" r="3"/><circle cx="24" cy="11" r="3"/><circle cx="29" cy="17" r="3"/></svg><h3>Bientôt, la première copine</h3><p>Sa photo et le récit de ses premières balades arrivent très vite.</p></div>
+  </div>
+</div></section>
+
+<section class="about" id="qui"><div class="wrap">
+  <div class="photos">
+    <img class="ph" src="img/einat-umi.jpg" alt="Einat et Umi" loading="lazy"><img class="ph" src="img/louvre.jpg" alt="Umi en laisse devant la pyramide du Louvre" loading="lazy"><img class="ph" src="img/lac.jpg" alt="Umi trempée au bord du lac du bois de Boulogne" loading="lazy"><img class="ph" src="img/voiture.jpg" alt="Umi qui donne la patte, toute souriante" loading="lazy">
+  </div>
+  <div>
+    <p class="eyebrow">Qui suis-je</p>
+    <h2>Einat, <em>et sa coéquipière Umi</em></h2>
+    <p>J'ai 30 ans et je vis avec Umi, une bergère américaine pleine d'énergie. Depuis son adoption, je suis les cours d'un éducateur canin pour comprendre la psychologie du chien, ses besoins physiques et ses besoins mentaux. Je sais ce qu'un chien attend d'une vraie sortie, et je suis attentive aux consignes de chacun.</p>
+    <p class="quote">« J'habite le quartier, je suis disponible en journée, et je traite votre chien comme le mien. »</p>
+  </div>
+</div></section>
+
+<section class="galerie" aria-label="Umi en photos"><div class="wrap">
+  <div class="strip">
+    <img src="img/herbe.jpg" alt="Umi allongée dans l'herbe avec son jouet" loading="lazy"><img src="img/einat-chiot.jpg" alt="Einat qui tient Umi bébé dans ses bras" loading="lazy"><img src="img/noel.jpg" alt="Umi devant un sapin illuminé" loading="lazy"><img src="img/neige.jpg" alt="Umi dans la neige" loading="lazy"><img src="img/bisou.jpg" alt="Umi qui fait un bisou à Einat" loading="lazy"><img src="img/plage.jpg" alt="Umi sur la plage" loading="lazy"><img src="img/glace.jpg" alt="Umi qui goûte une glace pour chien" loading="lazy"><img src="img/roule-herbe.jpg" alt="Umi qui se roule sur le dos dans l'herbe" loading="lazy"><img src="img/sourire-canape.jpg" alt="Umi qui sourit sur le canapé" loading="lazy"><img src="img/langue.jpg" alt="Umi qui se lèche le museau au bord d'une piscine" loading="lazy">
+  </div>
+</div></section>
+
+<section class="videos" aria-label="Umi en vidéo"><div class="wrap">
+  <p class="eyebrow">En vidéo</p>
+  <h2>Umi, <em>dans son élément</em></h2>
+  <div class="vgrid">
+    <video src="vid/plongeon.mp4" poster="vid/plongeon.jpg" muted loop playsinline preload="none" aria-label="Umi qui plonge dans le lac"></video><video src="vid/piscine.mp4" poster="vid/piscine.jpg" muted loop playsinline preload="none" aria-label="Umi qui joue dans sa piscine"></video><video src="vid/roulade.mp4" poster="vid/roulade.jpg" muted loop playsinline preload="none" aria-label="Umi qui se roule dans l'herbe"></video><video src="vid/copain.mp4" poster="vid/copain.jpg" muted loop playsinline preload="none" aria-label="Umi qui joue avec un copain"></video>
+  </div>
+</div></section>
+
+<section class="quartier" id="quartier"><div class="wrap">
+  <div>
+    <p class="eyebrow">Quartiers desservis</p>
+    <h2>Le 17e <em>et tout autour</em></h2>
+    <p class="lead" style="margin-top:16px">J'habite les Batignolles et je me déplace à pied ou en métro dans tout le nord-ouest de Paris. Votre chien, lui, ne quitte jamais son quartier.</p>
+    <ul class="parks">
+      <li><span>Batignolles · Épinettes · Clichy-Batignolles · Brochant</span><span>17e</span></li>
+      <li><span>Ternes · Monceau · Villiers · Pereire</span><span>17e · 8e</span></li>
+      <li><span>La Fourche · Guy-Môquet · Lamarck · Abbesses</span><span>18e</span></li>
+      <li><span>Europe · Saint-Lazare · Rome · Pigalle</span><span>8e · 9e</span></li>
+      <li><span>Levallois-Perret · Clichy</span><span>92</span></li>
+    </ul>
+    <p class="extras">Vous êtes un peu plus loin ? Écrivez-moi quand même.</p>
+  </div>
+  <div class="map" aria-label="Carte des quartiers desservis">
+    <div id="carte" hidden></div>
+    <svg id="carte-schema" viewBox="0 0 420 340" role="img" aria-labelledby="mapt"><title id="mapt">Zone desservie : 17e, 8e, 9e, 18e, Levallois-Perret et Clichy</title>
+      <ellipse cx="210" cy="172" rx="190" ry="150" fill="var(--sage-soft)"/>
+      <ellipse cx="210" cy="172" rx="190" ry="150" fill="none" stroke="var(--sage)" stroke-dasharray="2 6" stroke-width="1.2"/>
+      <circle cx="200" cy="165" r="70" fill="var(--blush)" opacity=".7"/>
+      <g fill="var(--sage-deep)"><circle cx="78" cy="118" r="5"/><circle cx="168" cy="62" r="5"/><circle cx="312" cy="88" r="5"/><circle cx="340" cy="210" r="5"/><circle cx="250" cy="268" r="5"/><circle cx="110" cy="236" r="5"/></g>
+      <g font-family="Instrument Serif, Georgia, serif" font-size="17" fill="var(--ink)">
+        <text x="40" y="106">Levallois</text><text x="150" y="50">Clichy</text><text x="296" y="76">18e</text><text x="350" y="214">9e</text><text x="262" y="282">8e · Europe</text><text x="60" y="262">Ternes · Monceau</text>
+      </g>
+      <circle cx="200" cy="165" r="9" fill="var(--blush-ink)"/>
+      <text x="200" y="194" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="20" fill="var(--ink)">Batignolles</text>
+    </svg>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <p class="eyebrow">Questions fréquentes</p>
+  <h2>Avant de me confier <em>votre chien</em></h2>
+  <div class="faq">
+    <details><summary>Promenez-vous plusieurs chiens en même temps ?</summary><p>Non, sauf les chiens d'un même foyer. Chaque promenade est individuelle.</p></details>
+    <details><summary>Comment se passe la remise des clés ?</summary><p>On en parle lors de la rencontre : double des clés, boîte à clés ou remise en main propre. Les clés sont rangées sans étiquette d'adresse.</p></details>
+    <details><summary>Et si mon chien tire en laisse ou est réactif ?</summary><p>Dites-le-moi dès le premier message. On choisit ensemble les horaires et les lieux les plus calmes, et la rencontre sert à vérifier que tout se passe bien.</p></details>
+    <details><summary>Que se passe-t-il en cas de pépin ?</summary><p>Je garde sur moi le numéro de votre vétérinaire et le vôtre. Je vous préviens immédiatement et je suis vos consignes.</p></details>
+    <details><summary>Mon chien se promène-t-il avec Umi ?</summary><p>Seulement si vous le souhaitez et si le courant passe entre eux lors de la rencontre. Sinon, votre chien a la balade pour lui tout seul.</p></details>
+    <details><summary>Le lâchez-vous en liberté ?</summary><p>Jamais sans votre accord, et uniquement dans les espaces où c'est autorisé, quand je suis sûre de son rappel.</p></details>
+    <details><summary>Mon chien est un chiot, ou il est âgé : c'est possible ?</summary><p>Oui. J'adapte la durée et le rythme : des sorties courtes et rassurantes pour les chiots, une balade tranquille pour les seniors.</p></details>
+    <details><summary>Et quand il pleut ou qu'il fait très chaud ?</summary><p>On sort quand même sous la pluie, et je l'essuie en rentrant. Par fortes chaleurs, je décale la sortie aux heures fraîches et je prévois de l'eau.</p></details>
+    <details><summary>Lui donnez-vous des friandises ?</summary><p>Uniquement ce que vous m'autorisez. Allergies, régime ou interdits : on le note ensemble lors de la rencontre.</p></details>
+    <details><summary>Que faut-il me laisser ?</summary><p>Sa laisse ou son harnais, des sacs, ses friandises si besoin, et ses vaccins à jour.</p></details>
+    <details><summary>Comment régler, et si je dois annuler ?</summary><p>Le règlement se fait sur place, à la séance ou au forfait. Pour annuler, prévenez-moi au moins 24 h à l'avance, sans frais.</p></details>
+    <details><summary>Gardez-vous les chiens pendant les vacances ?</summary><p>Pour la garde de jour ou de nuit, écrivez-moi en précisant les dates : je vous réponds selon mes disponibilités. Les vacances scolaires partent vite, pensez à réserver tôt.</p></details>
+  </div>
+</div></section>
+
+
 
 <footer><div class="wrap"><span class="brand">Les Balades des Pattounes</span><span>Promenade et visites de chiens · Paris 17e et alentours · 06 31 35 09 82</span></div></footer>
 
