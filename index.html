@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
 <title>Les Balades des Pattounes</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Promenade et visites pour chiens à Paris 17e (Batignolles, Ternes, Épinettes), 8e, 9e, 18e, Levallois et Clichy. Rencontre offerte, photo après chaque sortie.">
@@ -74,20 +75,25 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .item-top .price{font-family:var(--display);font-size:30px;font-variant-numeric:tabular-nums;white-space:nowrap}
 .item-top .price small{font-family:var(--body);font-size:13px;color:var(--muted)}
 .item p{color:var(--muted);font-size:15px}
-.item .tag{justify-self:start;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:var(--blush);color:var(--blush-ink);padding:3px 10px;border-radius:999px}
+.item .tag{display:inline-block;margin-left:4px;vertical-align:1px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:var(--blush);color:var(--blush-ink);padding:3px 10px;border-radius:999px}
 .extras{margin-top:28px;color:var(--muted);font-size:15px}
 
 #deroulement{background:var(--paper);border-block:1px solid var(--line)}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:36px;margin-top:48px}
-.step{display:grid;gap:10px;align-content:start}
-.step .n{font-family:var(--display);font-style:italic;font-size:44px;line-height:1;color:var(--blush-ink)}
+.step{display:grid;grid-template-columns:auto 1fr;column-gap:14px;row-gap:8px;align-items:baseline;align-content:start}
+.step p{grid-column:2}
+.step .n{font-family:var(--display);font-style:italic;font-size:40px;line-height:1;color:var(--blush-ink)}
 .step h3{font-size:24px}
 .step p{color:var(--muted);font-size:15px}
 
 .quartier .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 @media (max-width:860px){.quartier .wrap{grid-template-columns:1fr}}
 .map{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:16px;overflow-x:auto}
-.map svg{display:block;width:100%;min-width:300px;height:auto}
+.map > svg{display:block;width:100%;min-width:300px;height:auto}
+#carte{position:relative;z-index:0}
+#carte{height:420px;border-radius:20px;overflow:hidden;background:var(--sage-soft)}
+.map .leaflet-tooltip{font-family:var(--body);font-size:12px;font-weight:600;color:var(--ink);background:var(--paper);border:1px solid var(--line);box-shadow:none}
+.map .note{font-size:12px;color:var(--muted);margin-top:8px}
 .parks{list-style:none;margin:28px 0 0;padding:0}
 .parks li{display:flex;justify-content:space-between;gap:12px;padding-block:12px;border-bottom:1px solid var(--line)}
 .parks li span:last-child{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;font-size:14px}
@@ -115,6 +121,10 @@ details p{color:var(--muted);margin-top:10px;max-width:62ch}
 .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px}
 @media (max-width:860px){.contact .wrap{grid-template-columns:1fr}}
 form{background:var(--bg);border-radius:28px;padding:28px;display:grid;gap:16px}
+.form-title{font-family:var(--display);font-size:26px}
+.hint{font-size:13px;color:var(--muted)}
+.booking:empty{display:none}
+.booking{min-height:560px;border-radius:28px;overflow:hidden;background:var(--paper)}
 label{font-size:13px;font-weight:600;display:grid;gap:6px;color:var(--muted)}
 input,select,textarea{font:inherit;font-size:16px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--paper);color:var(--ink);width:100%}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -169,9 +179,8 @@ img{max-width:100%}
       <p>Une vraie sortie et une petite balade, idéale le midi en semaine.</p>
     </div>
     <div class="item">
-      <span class="tag">La plus demandée</span>
       <div class="item-top"><h3>Grande balade</h3><span class="dots"></span><span class="price">22 € <small>1 h</small></span></div>
-      <p>Square, jeux et vraie dépense d'énergie, pour les jeunes chiens et les sportifs.</p>
+      <p>Square, jeux et vraie dépense d'énergie, pour les jeunes chiens et les sportifs. <span class="tag">La plus demandée</span></p>
     </div>
     <div class="item">
       <div class="item-top"><h3>Visite à domicile</h3><span class="dots"></span><span class="price">16 € <small>30 min</small></span></div>
@@ -210,8 +219,9 @@ img{max-width:100%}
     </ul>
     <p class="extras">Vous êtes un peu plus loin ? Écrivez-moi quand même.</p>
   </div>
-  <div class="map" aria-label="Plan schématique des quartiers desservis">
-    <svg viewBox="0 0 420 340" role="img" aria-labelledby="mapt"><title id="mapt">Zone desservie : 17e, 8e, 9e, 18e, Levallois-Perret et Clichy</title>
+  <div class="map" aria-label="Carte des quartiers desservis">
+    <div id="carte" hidden></div>
+    <svg id="carte-schema" viewBox="0 0 420 340" role="img" aria-labelledby="mapt"><title id="mapt">Zone desservie : 17e, 8e, 9e, 18e, Levallois-Perret et Clichy</title>
       <ellipse cx="210" cy="172" rx="190" ry="150" fill="var(--sage-soft)"/>
       <ellipse cx="210" cy="172" rx="190" ry="150" fill="none" stroke="var(--sage)" stroke-dasharray="2 6" stroke-width="1.2"/>
       <circle cx="200" cy="165" r="70" fill="var(--blush)" opacity=".7"/>
@@ -232,8 +242,7 @@ img{max-width:100%}
   <div>
     <p class="eyebrow">Qui suis-je</p>
     <h2>Einat, <em>et sa coéquipière Umi</em></h2>
-    <p>Umi est une bergère américaine née en décembre 2023. Un chien de berger demande de vraies sorties, des règles claires et beaucoup d'attention : c'est mon quotidien depuis bientôt trois ans.</p>
-    <p>Umi porte le gène MDR1, qui rend certains médicaments dangereux pour elle. Je suis donc très attentive aux consignes de santé et aux traitements de chaque chien que je promène.</p>
+    <p>Je vis avec Umi, une bergère américaine pleine d'énergie. Je sais ce qu'un chien attend d'une vraie sortie, et je suis attentive aux consignes de chacun.</p>
     <p class="quote">« J'habite le quartier, je suis disponible en journée, et je traite votre chien comme le mien. »</p>
   </div>
 </div></section>
@@ -253,49 +262,101 @@ img{max-width:100%}
 <section class="contact" id="contact"><div class="wrap">
   <div>
     <p class="eyebrow">Réserver</p>
-    <h2>Parlez-moi <em>de votre chien</em></h2>
-    <p class="lead" style="margin-top:16px">Appelez-moi ou écrivez-moi au 06 31 35 09 82. Vous pouvez aussi remplir le formulaire : il prépare votre message, à copier dans WhatsApp ou par SMS.</p>
+    <h2>Choisissez <em>votre créneau</em></h2>
+    <p class="lead" style="margin-top:16px">Commencez par la rencontre offerte de 20 minutes : je viens chez vous faire connaissance avec votre chien.</p>
     <div class="coord">
       <div><b>Téléphone</b><a href="tel:+33631350982">06 31 35 09 82</a></div>
+      <div><b>WhatsApp</b><a href="https://wa.me/33631350982" target="_blank" rel="noopener">M'écrire sur WhatsApp</a></div>
       <div><b>Instagram</b><span>@lesbaladesdespattounes</span></div>
       <div><b>Zone</b><span>Paris 17e, 8e, 9e, 18e, Levallois et Clichy</span></div>
     </div>
   </div>
-  <form id="f" novalidate>
-    <div class="row2">
-      <label for="nom">Votre prénom<input id="nom" required placeholder="Camille"></label>
-      <label for="chien">Nom du chien<input id="chien" placeholder="Pixel"></label>
-    </div>
-    <div class="row2">
-      <label for="race">Race et âge<input id="race" placeholder="Beagle, 3 ans"></label>
-      <label for="quartier-in">Quartier<input id="quartier-in" placeholder="Épinettes"></label>
-    </div>
-    <label for="presta">Prestation
-      <select id="presta"><option>Promenade 30 min</option><option selected>Grande balade 1 h</option><option>Visite à domicile</option><option>Forfait 10 sorties</option><option>Garde (dates à préciser)</option></select>
-    </label>
-    <label for="msg">Jours, horaires, consignes<textarea id="msg" rows="3" placeholder="Du lundi au jeudi vers 13 h. Il a peur des trottinettes."></textarea></label>
-    <button class="btn" type="submit">Préparer mon message</button>
-    <div id="out" class="out" hidden></div>
-    <button class="btn ghost" type="button" id="copy" hidden>Copier le message</button>
-  </form>
+  <div>
+    <div id="booking" class="booking"></div>
+    <form id="f" novalidate>
+      <p class="form-title">Demande de réservation</p>
+      <div class="row2">
+        <label for="nom">Votre prénom<input id="nom" required placeholder="Camille"></label>
+        <label for="chien">Nom du chien<input id="chien" placeholder="Pixel"></label>
+      </div>
+      <div class="row2">
+        <label for="race">Race et âge<input id="race" placeholder="Beagle, 3 ans"></label>
+        <label for="quartier-in">Quartier<input id="quartier-in" placeholder="Épinettes"></label>
+      </div>
+      <label for="presta">Prestation
+        <select id="presta"><option selected>Rencontre offerte (20 min)</option><option>Promenade 30 min</option><option>Grande balade 1 h</option><option>Visite à domicile</option><option>Forfait 10 sorties</option><option>Garde (dates à préciser)</option></select>
+      </label>
+      <div class="row2">
+        <label for="jour">Jour souhaité<input id="jour" type="date"></label>
+        <label for="heure">Moment
+          <select id="heure"><option>Matin (8 h - 12 h)</option><option selected>Midi (12 h - 14 h)</option><option>Après-midi (14 h - 18 h)</option><option>Soir (18 h - 20 h)</option></select>
+        </label>
+      </div>
+      <label for="msg">Consignes, habitudes<textarea id="msg" rows="3" placeholder="Il a peur des trottinettes. Clés chez la gardienne."></textarea></label>
+      <button class="btn" type="submit">Envoyer ma demande sur WhatsApp</button>
+      <div id="out" class="out" hidden></div>
+      <button class="btn ghost" type="button" id="copy" hidden>Copier le message</button>
+      <p class="hint">Je vous confirme le créneau par message dans la journée.</p>
+    </form>
+  </div>
 </div></section>
 
 <footer><div class="wrap"><span class="brand">Les Balades des Pattounes</span><span>Promenade et visites de chiens · Paris 17e et alentours · 06 31 35 09 82</span></div></footer>
 
+<script src="vendor/leaflet/leaflet.js"></script>
 <script>
-const f=document.getElementById('f'),out=document.getElementById('out'),cp=document.getElementById('copy');
+// Réglages faciles à changer.
+window.PATTOUNES = {
+  // Nom d'utilisateur Cal.com d'Einat (ex. "balades-pattounes"). Vide = formulaire WhatsApp à la place du calendrier.
+  calUsername: "",
+  whatsapp: "33631350982"
+};
+
+// Formulaire : prépare le message et l'ouvre dans WhatsApp.
+const cfg=window.PATTOUNES, f=document.getElementById('f'), out=document.getElementById('out'), cp=document.getElementById('copy');
 const v=id=>document.getElementById(id).value.trim();
+const inArtifact=/claude/.test(location.hostname)||location.protocol==='file:';
 f.addEventListener('submit',e=>{e.preventDefault();
   if(!v('nom')){document.getElementById('nom').focus();return;}
+  const jour=v('jour')?new Date(v('jour')+'T12:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'}):'';
   const lines=[`Bonjour Einat, je suis ${v('nom')}.`,
     v('chien')||v('race')?`Mon chien : ${[v('chien'),v('race')].filter(Boolean).join(', ')}.`:'',
     v('quartier-in')?`J'habite vers ${v('quartier-in')}.`:'',
-    `Je suis intéressé(e) par : ${v('presta')}.`, v('msg'),
-    `Quand pouvons-nous faire la rencontre ?`].filter(Boolean);
-  out.textContent=lines.join('\n');out.hidden=false;cp.hidden=false;cp.textContent='Copier le message';});
+    `Je souhaite réserver : ${v('presta')}.`,
+    jour?`Le ${jour}, ${v('heure').toLowerCase()}.`:`Moment : ${v('heure').toLowerCase()}.`,
+    v('msg')].filter(Boolean);
+  const text=lines.join('\n');
+  out.textContent=text;out.hidden=false;cp.hidden=false;cp.textContent='Copier le message';
+  if(!inArtifact) window.open('https://wa.me/'+cfg.whatsapp+'?text='+encodeURIComponent(text),'_blank','noopener');
+});
 cp.addEventListener('click',()=>{
   navigator.clipboard.writeText(out.textContent).then(()=>{cp.textContent='Message copié';})
   .catch(()=>{const r=document.createRange();r.selectNodeContents(out);const s=getSelection();s.removeAllRanges();s.addRange(r);cp.textContent='Texte sélectionné : copiez-le';});});
+
+// Réservation en ligne : calendrier Cal.com si configuré, sinon le formulaire.
+if(cfg.calUsername && !inArtifact){
+  f.hidden=true;
+  (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", { origin: "https://cal.com" });
+  Cal("inline", { elementOrSelector: "#booking", calLink: cfg.calUsername, layout: "month_view" });
+  Cal("ui", { theme: "light", cssVarsPerTheme: { light: { "cal-brand": "#5f8170" } }, hideEventTypeDetails: false, layout: "month_view" });
+  setTimeout(()=>{ if(!document.querySelector('#booking iframe')){ f.hidden=false; } }, 8000);
+}
+
+// Carte : vraie carte sur le site en ligne, schéma dans l'aperçu.
+if(!inArtifact && window.L){
+  document.getElementById('carte').hidden=false;
+  document.getElementById('carte-schema').setAttribute('hidden','');
+  const map=L.map('carte',{scrollWheelZoom:false,attributionControl:true}).setView([48.8862,2.3110],13);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{maxZoom:18,subdomains:'abcd',
+    attribution:'&copy; OpenStreetMap &copy; CARTO'}).addTo(map);
+  const zone=[[48.8935,2.2775],[48.9030,2.2905],[48.9085,2.3045],[48.9025,2.3240],[48.9000,2.3440],[48.8890,2.3480],[48.8800,2.3440],[48.8735,2.3380],[48.8725,2.3220],[48.8745,2.3050],[48.8760,2.2940],[48.8790,2.2830]];
+  L.polygon(zone,{color:'#5f8170',weight:1.5,dashArray:'4 6',fillColor:'#7e9e89',fillOpacity:.14}).addTo(map);
+  L.circleMarker([48.8873,2.3195],{radius:8,color:'#fff',weight:2,fillColor:'#c07a66',fillOpacity:1}).addTo(map)
+    .bindTooltip('Batignolles',{permanent:true,direction:'top',offset:[0,-8]});
+  [['Levallois',48.8935,2.2870],['Clichy',48.9030,2.3060],['Épinettes',48.8955,2.3240],['La Fourche',48.8875,2.3260],['Ternes',48.8800,2.2960],['Monceau',48.8790,2.3090],['Saint-Lazare',48.8760,2.3250],['Pigalle',48.8820,2.3375]]
+    .forEach(([n,a,b])=>L.circleMarker([a,b],{radius:4,color:'#5f8170',weight:1,fillColor:'#5f8170',fillOpacity:1}).addTo(map).bindTooltip(n,{permanent:true,direction:'right',offset:[6,0]}));
+}
 </script>
 
 </body>
