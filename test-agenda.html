@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test agenda · Les Balades des Pattounes</title><meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#fbfaf6;--paper:#fff;--ink:#2f3a35;--muted:#6b746f;--line:#e6e2d9;--sage:#8fa89a;--sage-deep:#5f8170}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,sans-serif;padding:24px 16px}
+.wrap{max-width:720px;margin:auto}
+h1{font-size:22px;margin:0 0 6px}p{color:var(--muted);margin:0 0 18px}
+.choix{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.choix button{font:inherit;font-size:14px;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.choix button[aria-pressed="true"]{background:var(--sage-deep);border-color:var(--sage-deep);color:#fff}
+.booking{height:min(620px,72vh);border-radius:28px;overflow:hidden;background:var(--paper);border:1px solid var(--line)}
+.booking cal-inline,.booking>div{height:100%!important}
+.booking iframe{height:100%!important;min-height:0!important;max-height:none!important}
+.booking-hint{font-size:13px;color:var(--muted);margin:10px 4px 0;text-align:center}
+.after{height:60vh;display:grid;place-items:center;color:var(--muted)}
+</style></head><body><div class="wrap">
+<h1>Test de l'agenda</h1>
+<p>Page de test, pas encore sur le site. Les créneaux doivent défiler à l'intérieur du cadre, sans faire défiler toute la page.</p>
+<div id="cal-choix" class="choix" role="group" aria-label="Choisir la prestation">
+<button type="button" data-slug="rencontre-chien" aria-pressed="true">Rencontre offerte</button><button type="button" data-slug="promenade">Promenade 30 min</button><button type="button" data-slug="grande-balade">Grande balade 1 h</button><button type="button" data-slug="visite">Visite à domicile</button>
+</div>
+<div id="booking" class="booking"></div>
+<p class="booking-hint">Faites défiler les créneaux dans le cadre ↓</p>
+<div class="after">Suite de la page</div>
+</div>
+<script>
+(function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", { origin: "https://cal.com" });
+const choix=document.getElementById('cal-choix'), booking=document.getElementById('booking');
+const show=slug=>{booking.innerHTML='';Cal("inline", { elementOrSelector: "#booking", calLink: 'einatguedj/'+slug, layout: "month_view", config: { theme: "light", layout: "month_view" } });};
+choix.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  choix.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));show(b.dataset.slug);});
+show('rencontre-chien');
+Cal("ui", { theme: "light", cssVarsPerTheme: { light: { "cal-brand": "#5f8170" } }, hideEventTypeDetails: false, layout: "month_view" });
+</script></body></html>
