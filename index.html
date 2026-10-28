@@ -80,7 +80,9 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 
 #deroulement{background:var(--paper);border-block:1px solid var(--line)}
 .besoins{background:var(--sage-soft)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:16px;margin-top:36px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+@media (max-width:900px){.cards{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.cards{grid-template-columns:1fr}}
 .card{background:var(--paper);border-radius:22px;padding:24px 22px}
 .card h3{font-size:24px;margin-bottom:8px}
 .card p{color:var(--muted);font-size:15px}
@@ -215,12 +217,13 @@ img{max-width:100%}
 <section class="besoins" id="besoins"><div class="wrap">
   <p class="eyebrow">Bon à savoir</p>
   <h2>Ce dont votre chien <em>a vraiment besoin</em></h2>
-  <p class="lead">Une sortie, ce n'est pas seulement faire ses besoins. Un chien équilibré a besoin de se dépenser, de réfléchir, de rencontrer et de se reposer. C'est ce que je cherche à lui apporter à chaque balade.</p>
+  <p class="lead">Une sortie, ce n'est pas seulement faire ses besoins. Le bien-être mental d'un chien compte autant que sa santé physique : il a besoin de se dépenser, de réfléchir, de rencontrer, de se sentir en sécurité et de se reposer. C'est ce que j'ai appris avec Umi, et ce que je cherche à apporter à chaque balade.</p>
   <div class="cards">
     <div class="card"><h3>Renifler</h3><p>Le flair est son premier sens. Renifler et mâcher l'occupent, canalisent son énergie et calment son stress. Je laisse toujours du temps pour explorer.</p></div>
     <div class="card"><h3>Se dépenser</h3><p>Une dépense physique chaque jour est indispensable. La durée et le rythme dépendent de son âge, de sa race et de sa forme.</p></div>
     <div class="card"><h3>Réfléchir</h3><p>L'ennui fatigue autant qu'il agace. Jeux, recherche de friandises, nouveaux parcours : stimuler sa tête l'épanouit.</p></div>
     <div class="card"><h3>Rencontrer</h3><p>Le chien est un animal social. Des rencontres positives avec des chiens et des humains l'aident à rester confiant et à l'aise.</p></div>
+    <div class="card"><h3>Se sentir en sécurité</h3><p>Peurs des bruits, des humains ou des autres chiens : elles se travaillent en douceur, à son rythme, sans jamais le forcer. Je n'utilise que l'éducation positive : je récompense, je ne punis pas.</p></div>
     <div class="card"><h3>Se reposer</h3><p>Un chien dort environ 12 h par jour, en plusieurs fois. Après la balade, il a besoin d'un coin calme à lui.</p></div>
   </div>
   <details class="conseils"><summary>Quelques conseils au quotidien</summary>
@@ -229,6 +232,9 @@ img{max-width:100%}
       <li>Au moins deux repas par jour plutôt qu'un seul, et pas d'effort intense juste après le repas.</li>
       <li>En été, sortez aux heures fraîches et testez le bitume du dos de la main : s'il est trop chaud pour vous, il l'est pour ses coussinets.</li>
       <li>Le « stop » et le rappel sont les deux ordres qui assurent sa sécurité en ville.</li>
+      <li>Variez les surfaces et les parcours (herbe, sable, graviers, nouvelles rues) : c'est un vrai éveil pour ses sens.</li>
+      <li>Peurs, anxiété quand il reste seul, destructions, hyperactivité : ce sont des signes de mal-être, pas de « bêtise ». Parlez-en tôt à un éducateur ou à votre vétérinaire.</li>
+      <li>Votre sérénité compte aussi : un chien ressent le stress de son maître. Personne ne sait tout dès le premier jour.</li>
       <li>Une visite chez le vétérinaire au moins une fois par an, même s'il va bien.</li>
     </ul>
   </details>
