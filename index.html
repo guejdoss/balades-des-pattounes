@@ -120,8 +120,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .map > svg{display:block;width:100%;min-width:300px;height:auto}
 #carte{position:relative;z-index:0}
 #carte .leaflet-tile-pane{filter:grayscale(.55) sepia(.12) brightness(1.04) contrast(.92)}
-#carte{height:420px;border-radius:20px;overflow:hidden;background:var(--sage-soft)}
-@media (max-width:600px){#carte{height:320px}#carte .lab-sec{display:none}}
+#carte{height:auto;aspect-ratio:16/10;border-radius:20px;overflow:hidden;background:var(--sage-soft)}
+@media (max-width:600px){#carte .lab-sec{display:none}}
 .map .leaflet-tooltip{font-family:var(--body);font-size:12px;font-weight:600;color:var(--ink);background:var(--paper);border:1px solid var(--line);box-shadow:none}
 .map .note{font-size:12px;color:var(--muted);margin-top:8px}
 .parks{list-style:none;margin:28px 0 0;padding:0}
@@ -474,9 +474,10 @@ if(!inArtifact && window.L){
   const map=L.map('carte',{scrollWheelZoom:false,attributionControl:true,zoomSnap:0.25}).setView([48.8862,2.3110],13);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,
     attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
-  const zone=[[48.8935,2.2775],[48.9030,2.2905],[48.9085,2.3045],[48.9025,2.3240],[48.9000,2.3440],[48.8890,2.3480],[48.8800,2.3440],[48.8735,2.3380],[48.8725,2.3220],[48.8745,2.3050],[48.8760,2.2940],[48.8790,2.2830]];
+  const zone=[[48.8935,2.2775],[48.8975,2.2880],[48.8985,2.3050],[48.8985,2.3240],[48.8960,2.3440],[48.8890,2.3480],[48.8800,2.3440],[48.8735,2.3380],[48.8725,2.3220],[48.8745,2.3050],[48.8760,2.2940],[48.8790,2.2830]];
   const poly=L.polygon(zone,{color:'#5f8170',weight:1.5,dashArray:'4 6',fillColor:'#7e9e89',fillOpacity:.14}).addTo(map);
-  map.fitBounds(poly.getBounds(),{padding:[14,14]});
+  map.fitBounds(poly.getBounds(),{padding:[10,10]});
+  map.setMinZoom(map.getZoom());map.setMaxBounds(poly.getBounds().pad(0.05));
   L.circleMarker([48.8873,2.3195],{radius:8,color:'#fff',weight:2,fillColor:'#c07a66',fillOpacity:1}).addTo(map)
     .bindTooltip('Batignolles',{permanent:true,direction:'top',offset:[0,-8]});
   [['Levallois',48.8935,2.2870],['Épinettes',48.8955,2.3240],['La Fourche',48.8875,2.3260],['Ternes',48.8800,2.2960],['Monceau',48.8790,2.3090],['Saint-Lazare',48.8760,2.3250],['Pigalle',48.8820,2.3375]]
