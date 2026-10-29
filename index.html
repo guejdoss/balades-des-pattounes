@@ -472,8 +472,9 @@ if(!inArtifact && window.L){
   document.getElementById('carte').hidden=false;
   document.getElementById('carte-schema').setAttribute('hidden','');
   const map=L.map('carte',{scrollWheelZoom:false,attributionControl:true,zoomSnap:0.25}).setView([48.8862,2.3110],13);
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,
-    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+  // Fond gris sans noms de lieux : seuls nos quartiers sont écrits.
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,
+    attribution:'Esri, HERE, Garmin, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
   const zone=[[48.8935,2.2775],[48.8975,2.2880],[48.8985,2.3050],[48.8985,2.3240],[48.8960,2.3440],[48.8890,2.3480],[48.8800,2.3440],[48.8735,2.3380],[48.8725,2.3220],[48.8745,2.3050],[48.8760,2.2940],[48.8790,2.2830]];
   const poly=L.polygon(zone,{color:'#5f8170',weight:1.5,dashArray:'4 6',fillColor:'#7e9e89',fillOpacity:.14}).addTo(map);
   map.fitBounds(poly.getBounds(),{padding:[10,10]});
