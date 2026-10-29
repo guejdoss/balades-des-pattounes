@@ -38,6 +38,7 @@ section{padding-block:36px}
 .paw{display:inline-block;width:18px;height:18px;vertical-align:-3px}
 .paw g{fill:var(--blush-ink)}
 
+section[id],header[id]{scroll-margin-top:84px}
 nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
@@ -142,7 +143,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .faq{max-width:none;margin-top:24px}
 .videos{padding-block:32px 0}
 .vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
-.vgrid video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:18px;display:block;background:var(--sage-soft)}
+.vgrid video{cursor:pointer;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:18px;display:block;background:var(--sage-soft)}
 .vgrid video:nth-child(even){border-radius:999px 999px 18px 18px}
 @media (max-width:700px){.vgrid{grid-template-columns:1fr 1fr}}
 .galerie{padding-block:28px 0}
@@ -358,7 +359,7 @@ img{max-width:100%}
   <p class="eyebrow">En vidéo</p>
   <h2>Umi, <em>dans son élément</em></h2>
   <div class="vgrid">
-    <video src="vid/plongeon.mp4" poster="vid/plongeon.jpg" muted loop playsinline preload="none" aria-label="Umi qui plonge dans le lac"></video><video src="vid/piscine.mp4" poster="vid/piscine.jpg" muted loop playsinline preload="none" aria-label="Umi qui joue dans sa piscine"></video><video src="vid/roulade.mp4" poster="vid/roulade.jpg" muted loop playsinline preload="none" aria-label="Umi qui se roule dans l'herbe"></video><video src="vid/copain.mp4" poster="vid/copain.jpg" muted loop playsinline preload="none" aria-label="Umi qui joue avec un copain"></video>
+    <video src="vid/m/plongeon.mp4" poster="vid/plongeon.jpg" muted autoplay loop playsinline preload="metadata" aria-label="Umi qui plonge dans le lac"></video><video src="vid/m/piscine.mp4" poster="vid/piscine.jpg" muted autoplay loop playsinline preload="metadata" aria-label="Umi qui joue dans sa piscine"></video><video src="vid/m/roulade.mp4" poster="vid/roulade.jpg" muted autoplay loop playsinline preload="metadata" aria-label="Umi qui se roule dans l'herbe"></video><video src="vid/m/copain.mp4" poster="vid/copain.jpg" muted autoplay loop playsinline preload="metadata" aria-label="Umi qui joue avec un copain"></video>
   </div>
 </div></section>
 
@@ -459,8 +460,8 @@ if(cfg.calUsername && !inArtifact){
 
 // Vidéos : lecture muette quand elles sont à l'écran.
 const vids=document.querySelectorAll('.vgrid video');
-// Sur téléphone : versions légères des vidéos.
-if(matchMedia('(max-width:700px)').matches) vids.forEach(v=>{v.src=v.getAttribute('src').replace('vid/','vid/m/');});
+// Un clic lance ou met en pause, si le navigateur bloque la lecture automatique.
+vids.forEach(v=>v.addEventListener('click',()=>v.paused?v.play().catch(()=>{}):v.pause()));
 if('IntersectionObserver' in window){
   const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;
     if(e.isIntersecting){v.preload='auto';v.play().catch(()=>{});}else v.pause();}),{threshold:.2,rootMargin:'200px 0px'});
