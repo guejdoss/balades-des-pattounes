@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#5f8170">
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Promenade et visites pour chiens à Paris 17e (Batignolles, Ternes, Épinettes), 8e, 9e, 18e, Levallois et Clichy. Rencontre offerte, photos et vidéos après chaque sortie.">
+<meta name="description" content="Promenade et visites pour chiens à Paris 17e (Batignolles, Ternes, Épinettes), 8e, 9e, 18e et Levallois. Rencontre offerte, photos et vidéos après chaque sortie.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap">
 <style>
 /* Layout: a calm neighbourhood journal — airy serif headlines, a price list set like a menu, sage and blush washes */
@@ -58,8 +58,9 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .hero h1 em{font-style:italic}
 .hero .lead{margin-top:24px}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.facts{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:36px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
-.facts span{display:flex;align-items:center;gap:8px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:36px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.facts span{display:flex;align-items:center;gap:8px;white-space:nowrap}
+@media (min-width:861px){.facts{flex-wrap:nowrap;font-size:13px}}
 .facts span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blush-ink)}
 .hero-art{position:relative;max-width:420px;width:100%;justify-self:center}
 .arch{aspect-ratio:4/5;max-width:100%;border-radius:999px 999px 28px 28px;background:linear-gradient(170deg,var(--blush),var(--sage-soft));display:grid;place-items:center;text-align:center;color:var(--muted);font-family:var(--display);font-style:italic;font-size:22px;position:relative;overflow:hidden}
@@ -93,14 +94,11 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .conseils{margin-top:24px;background:var(--paper);border-radius:22px;padding:18px 22px}
 .conseils summary{cursor:pointer;font-weight:600}
 .conseils ul{margin:12px 0 0;padding-left:20px;color:var(--muted);font-size:15px;display:grid;gap:6px}
-.ic{width:44px;height:44px;padding:9px;border-radius:50%;background:var(--sage-soft);fill:none;stroke:var(--sage-deep);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:14px;display:block}
+.ic{width:44px;height:44px;padding:9px;border-radius:50%;background:var(--sage-soft);fill:none;stroke:var(--sage-deep);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;display:block;flex-shrink:0}
 .besoins .card .ic{background:var(--blush)}
-.process{padding-block:48px}
-.process .steps{grid-template-columns:repeat(4,1fr);gap:24px;margin-top:20px}
-.process .step h3{font-size:21px}
-@media (max-width:800px){.process .steps{grid-template-columns:1fr 1fr}}
+.card-h{display:flex;align-items:center;gap:14px;margin-bottom:12px}.card-h h3{margin:0!important;line-height:1.1}
 .copains{padding-block:72px 0}
-.pals{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:16px;margin-top:28px}
+.pals{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:16px;margin-top:28px}
 .pal{border-radius:22px;padding:24px;background:var(--paper);border:1px solid var(--line)}
 .pal-soon{border:1.5px dashed var(--sage);background:transparent}
 .pal h3{font-size:22px;margin-bottom:6px}.pal p{color:var(--muted);font-size:15px}
@@ -111,6 +109,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .step h3{font-size:24px}
 .step p{color:var(--muted);font-size:15px}
 
+.zone-court{text-align:center;margin-top:22px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:15.5px}.zone-court b{color:var(--ink);font-weight:600}
 .quartier .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 @media (max-width:860px){.quartier .wrap{grid-template-columns:1fr}}
 .map{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:16px;overflow-x:auto}
@@ -118,6 +117,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 #carte{position:relative;z-index:0}
 #carte .leaflet-tile-pane{filter:grayscale(.55) sepia(.12) brightness(1.04) contrast(.92)}
 #carte{height:420px;border-radius:20px;overflow:hidden;background:var(--sage-soft)}
+@media (max-width:600px){#carte{height:320px}#carte .lab-sec{display:none}}
 .map .leaflet-tooltip{font-family:var(--body);font-size:12px;font-weight:600;color:var(--ink);background:var(--paper);border:1px solid var(--line);box-shadow:none}
 .map .note{font-size:12px;color:var(--muted);margin-top:8px}
 .parks{list-style:none;margin:28px 0 0;padding:0}
@@ -135,7 +135,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .ph:nth-child(4){border-radius:22px 22px 999px 999px;background:var(--butter)}
 .ph:nth-child(even){transform:translateY(28px)}
 
-.faq{max-width:780px;margin-top:36px}
+.faq{max-width:none;margin-top:24px}
 .videos{padding-block:72px 0}
 .vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
 .vgrid video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:18px;display:block;background:var(--sage-soft)}
@@ -147,12 +147,12 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .strip img:nth-child(odd){border-radius:999px 999px 18px 18px}
 @media (max-width:900px){.strip{grid-template-columns:repeat(4,1fr)}}
 @media (max-width:700px){.strip{grid-template-columns:1fr 1fr}}
-details{border-bottom:1px solid var(--line);padding-block:20px}
-summary{cursor:pointer;font-family:var(--display);font-size:24px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+details{border-bottom:1px solid var(--line);padding-block:13px}
+summary{cursor:pointer;font-family:var(--display);font-size:19px;align-items:center;list-style:none;display:flex;justify-content:space-between;gap:16px}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+";font-family:var(--body);font-weight:400;color:var(--sage);font-size:22px}
 details[open] summary::after{content:"–"}
-details p{color:var(--muted);margin-top:10px;max-width:62ch}
+details p{color:var(--muted);margin-top:8px;max-width:none;font-size:15.5px}
 
 #contact{background:var(--paper);border-top:1px solid var(--line)}
 .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px}
@@ -175,9 +175,10 @@ input,select,textarea{font:inherit;font-size:16px;padding:12px 14px;border-radiu
 .coord{display:grid;gap:14px;margin-top:30px}
 .coord div{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding-bottom:12px;border-bottom:1px solid var(--line)}
 .coord b{min-width:100px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--sage)}
-footer{padding-block:32px;color:var(--muted);font-size:14px}
+footer{padding-block:20px 12px;color:var(--muted);font-size:13px}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
-footer .brand{font-size:20px;color:var(--ink)}
+footer .brand{font-size:18px;color:var(--ink)}
+.ml{border:0;padding-block:6px 0}.ml summary{font-family:var(--body);font-size:12px;color:var(--muted);justify-content:flex-start;gap:6px}.ml summary::after{font-size:14px}.ml p{font-size:12px;line-height:1.55;margin-top:6px;max-width:none}
 @media (prefers-reduced-motion:no-preference){.seal{animation:float 6s ease-in-out infinite}@keyframes float{50%{transform:rotate(-5deg) translateY(-6px)}}}
 [hidden]{display:none!important}
 .tel{white-space:nowrap;color:inherit}
@@ -189,20 +190,20 @@ img{max-width:100%}
 
 <nav aria-label="Navigation principale"><div class="wrap">
   <a class="brand" href="#top"><svg class="paw" viewBox="0 0 32 32" aria-hidden="true"><g><ellipse cx="16" cy="21" rx="7" ry="6"/><circle cx="7.5" cy="13" r="3"/><circle cx="12.5" cy="8" r="3"/><circle cx="19.5" cy="8" r="3"/><circle cx="24.5" cy="13" r="3"/></g></svg>Les Balades des Pattounes</a>
-  <div class="navlinks"><a href="#tarifs">Tarifs</a><a href="#besoins">Bon à savoir</a><a href="#copains">Les copains</a><a href="#quartier">Quartiers</a><a href="#qui">Qui suis-je</a><a href="#faq">Questions</a></div>
+  <div class="navlinks"><a href="#tarifs">Tarifs</a><a href="#besoins">Bon à savoir</a><a href="#deroulement">Comment ça marche</a><a href="#quartier">Quartiers</a><a href="#qui">Qui suis-je</a><a href="#faq">Questions</a></div>
   <a class="btn" href="#contact">Réserver</a>
 </div></nav>
 
 <header class="hero" id="top"><div class="wrap">
   <div>
     <p class="eyebrow">Promenade et visites de chiens · Paris 17e et alentours</p>
-    <h1>Votre chien entre <em>de bonnes mains</em> pendant que vous travaillez.</h1>
+    <h1>Votre chien se promène <em>avec Umi</em> pendant que vous travaillez.</h1>
     <p class="lead">Je m'appelle Einat et je vis aux Batignolles avec Umi, ma bergère américaine. Je promène votre chien dans votre quartier, je passe le voir quand vous rentrez tard, et je vous envoie des photos et des vidéos après chaque sortie.</p>
     <div class="cta"><a class="btn" href="#contact">Demander la rencontre offerte</a><a class="btn ghost" href="#tarifs">Voir les tarifs</a></div>
     <div class="facts"><span>Rencontre offerte avant de commencer</span><span>Photos et vidéos après chaque sortie</span><span>Promenade individuelle</span></div>
   </div>
   <div class="hero-art">
-    <div class="arch"><img src="img/einat-terrasse.jpg" alt="Einat qui tient Umi dans ses bras en terrasse" width="825" height="1100" style="object-position:50% 40%"></div>
+    <div class="arch"><img src="img/couverture.jpg" alt="Umi qui sourit, langue sortie, au bord d'une piscine" width="799" height="1200" style="object-position:50% 45%"></div>
     <div class="seal">1re rencontre offerte<em>20 min, chez vous ou ailleurs</em></div>
   </div>
 </div></header>
@@ -241,7 +242,7 @@ img{max-width:100%}
       <div><b>Téléphone</b><a class="tel" href="tel:+33631350982">06&nbsp;31&nbsp;35&nbsp;09&nbsp;82</a></div>
       <div><b>WhatsApp</b><a href="https://wa.me/33631350982" target="_blank" rel="noopener">M'écrire sur WhatsApp</a></div>
       <div><b>Instagram</b><span>@lesbaladesdespattounes</span></div>
-      <div><b>Zone</b><span>Paris 17e, 8e, 9e, 18e, Levallois et Clichy</span></div>
+      <div><b>Zone</b><span>Paris 17e, 8e, 9e, 18e et Levallois</span></div>
     </div>
   </div>
   <div>
@@ -278,27 +279,17 @@ img{max-width:100%}
   </div>
 </div></section>
 
-<section id="deroulement" class="process"><div class="wrap">
-  <p class="eyebrow">Comment ça marche</p>
-  <div class="steps">
-    <div class="step"><span class="n">1</span><h3>Vous réservez</h3><p>Un créneau dans l'agenda ou un message.</p></div>
-    <div class="step"><span class="n">2</span><h3>On se rencontre</h3><p>20 min offertes, chez vous ou ailleurs.</p></div>
-    <div class="step"><span class="n">3</span><h3>Première balade</h3><p>Ponctuelle ou chaque semaine.</p></div>
-    <div class="step"><span class="n">4</span><h3>Des nouvelles</h3><p>Photos et vidéos après chaque sortie.</p></div>
-  </div>
-</div></section>
-
 <section class="besoins" id="besoins"><div class="wrap">
   <p class="eyebrow">Bon à savoir</p>
   <h2>Ce dont votre chien <em>a vraiment besoin</em></h2>
   <p class="lead">Une sortie, ce n'est pas seulement faire ses besoins. Le bien-être mental d'un chien compte autant que sa santé physique : il a besoin de se dépenser, de réfléchir, de rencontrer, de se sentir en sécurité et de se reposer. C'est ce que j'ai appris avec Umi, et ce que je cherche à apporter à chaque balade.</p>
   <div class="cards">
-    <div class="card"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><path d="M12 30c5-5 5-9 0-15M20 30c5-5 5-9 0-15M28 30c5-5 5-9 0-15"/></svg><h3>Renifler</h3><p>Le flair est son premier sens. Renifler et mâcher l'occupent, canalisent son énergie et calment son stress. Je laisse toujours du temps pour explorer.</p></div>
-    <div class="card"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="11"/><path d="M10 16c6 2 14 2 20 0M10 24c6-2 14-2 20 0"/></svg><h3>Se dépenser</h3><p>Une dépense physique chaque jour est indispensable. La durée et le rythme dépendent de son âge, de sa race et de sa forme.</p></div>
-    <div class="card"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><path d="M15 27c0-4-5-6-5-12a10 10 0 0 1 20 0c0 6-5 8-5 12z"/><path d="M16 31h8M17 34h6"/></svg><h3>Réfléchir</h3><p>L'ennui fatigue autant qu'il agace. Jeux, recherche de friandises, nouveaux parcours : stimuler sa tête l'épanouit.</p></div>
-    <div class="card"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><circle cx="15" cy="20" r="8"/><circle cx="25" cy="20" r="8"/></svg><h3>Rencontrer</h3><p>Le chien est un animal social. Des rencontres positives avec des chiens et des humains l'aident à rester confiant et à l'aise.</p></div>
-    <div class="card"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 7l11 4v8c0 7-5 12-11 14-6-2-11-7-11-14v-8z"/><path d="M15 20l4 4 6-7"/></svg><h3>Se sentir en sécurité</h3><p>Peurs des bruits, des humains ou des autres chiens : elles se travaillent en douceur, à son rythme, sans jamais le forcer. Je n'utilise que l'éducation positive : je récompense, je ne punis pas.</p></div>
-    <div class="card"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><path d="M27 25a11 11 0 0 1-12-15 11 11 0 1 0 12 15z"/></svg><h3>Se reposer</h3><p>Un chien dort environ 12 h par jour, en plusieurs fois. Après la balade, il a besoin d'un coin calme à lui.</p></div>
+    <div class="card"><div class="card-h"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><path d="M12 30c5-5 5-9 0-15M20 30c5-5 5-9 0-15M28 30c5-5 5-9 0-15"/></svg><h3>Renifler</h3></div><p>Le flair est son premier sens. Renifler et mâcher l'occupent, canalisent son énergie et calment son stress. Je laisse toujours du temps pour explorer.</p></div>
+    <div class="card"><div class="card-h"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="11"/><path d="M10 16c6 2 14 2 20 0M10 24c6-2 14-2 20 0"/></svg><h3>Se dépenser</h3></div><p>Une dépense physique chaque jour est indispensable. La durée et le rythme dépendent de son âge, de sa race et de sa forme.</p></div>
+    <div class="card"><div class="card-h"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><path d="M15 27c0-4-5-6-5-12a10 10 0 0 1 20 0c0 6-5 8-5 12z"/><path d="M16 31h8M17 34h6"/></svg><h3>Réfléchir</h3></div><p>L'ennui fatigue autant qu'il agace. Jeux, recherche de friandises, nouveaux parcours : stimuler sa tête l'épanouit.</p></div>
+    <div class="card"><div class="card-h"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><circle cx="15" cy="20" r="8"/><circle cx="25" cy="20" r="8"/></svg><h3>Rencontrer</h3></div><p>Le chien est un animal social. Des rencontres positives avec des chiens et des humains l'aident à rester confiant et à l'aise.</p></div>
+    <div class="card"><div class="card-h"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 7l11 4v8c0 7-5 12-11 14-6-2-11-7-11-14v-8z"/><path d="M15 20l4 4 6-7"/></svg><h3>Se sentir en sécurité</h3></div><p>Peurs des bruits, des humains ou des autres chiens : elles se travaillent en douceur, à son rythme, sans jamais le forcer. Je n'utilise que l'éducation positive : je récompense, je ne punis pas.</p></div>
+    <div class="card"><div class="card-h"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><path d="M27 25a11 11 0 0 1-12-15 11 11 0 1 0 12 15z"/></svg><h3>Se reposer</h3></div><p>Un chien dort environ 12 h par jour, en plusieurs fois. Après la balade, il a besoin d'un coin calme à lui.</p></div>
   </div>
   <details class="conseils"><summary>Quelques conseils au quotidien</summary>
     <ul>
@@ -314,22 +305,29 @@ img{max-width:100%}
   </details>
 </div></section>
 
-
-
-
+<section id="deroulement"><div class="wrap">
+  <p class="eyebrow">Comment ça marche</p>
+  <h2>De la rencontre <em>à la première balade</em></h2>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><h3>Vous m'écrivez</h3><p>Par le formulaire ou par message. Je réponds dans la journée.</p></div>
+    <div class="step"><span class="n">2</span><h3>On se rencontre</h3><p>20 minutes offertes, chez vous ou dans un lieu de votre choix. Je fais connaissance avec votre chien et on parle de vos attentes, de ses besoins et des vôtres.</p></div>
+    <div class="step"><span class="n">3</span><h3>Première balade</h3><p>Je passe à l'heure convenue, chaque semaine ou ponctuellement.</p></div>
+    <div class="step"><span class="n">4</span><h3>Photos, vidéos et nouvelles</h3><p>Après chaque sortie : des photos, une petite vidéo, la durée, et comment ça s'est passé.</p></div>
+  </div>
+</div></section>
 
 <section class="copains" id="copains"><div class="wrap">
   <p class="eyebrow">Ils se baladent avec moi</p>
   <h2>Les copains <em>des Pattounes</em></h2>
-  <p class="lead" style="margin-top:16px">Chaque chien que je promène ou que je garde a sa place ici : son prénom, sa photo et le mot de son humain.</p>
+  <p class="lead" style="margin-top:16px;max-width:none">Chaque chien que je promène ou que je garde a sa place ici : son prénom, sa photo et le mot de son humain.</p>
   <div class="pals">
-    <div class="pal pal-soon"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><ellipse cx="20" cy="25" rx="7" ry="6"/><circle cx="11" cy="17" r="3"/><circle cx="16" cy="11" r="3"/><circle cx="24" cy="11" r="3"/><circle cx="29" cy="17" r="3"/></svg><h3>Bientôt, la première copine</h3><p>Sa photo et le récit de ses premières balades arrivent très vite.</p></div>
+    <div class="pal pal-soon"><div class="card-h"><svg class="ic" viewBox="0 0 40 40" aria-hidden="true"><ellipse cx="20" cy="25" rx="7" ry="6"/><circle cx="11" cy="17" r="3"/><circle cx="16" cy="11" r="3"/><circle cx="24" cy="11" r="3"/><circle cx="29" cy="17" r="3"/></svg><h3>Bientôt, la première copine</h3></div><p>Sa photo et le récit de ses premières balades arrivent très vite.</p></div>
   </div>
 </div></section>
 
 <section class="about" id="qui"><div class="wrap">
   <div class="photos">
-    <img class="ph" src="img/einat-bisou.jpg" alt="Umi qui fait un bisou à Einat dans un jardin" loading="lazy"><img class="ph" src="img/louvre.jpg" alt="Umi en laisse devant la pyramide du Louvre" loading="lazy"><img class="ph" src="img/lac.jpg" alt="Umi trempée au bord du lac du bois de Boulogne" loading="lazy"><img class="ph" src="img/einat-portrait.jpg" alt="Einat, souriante" loading="lazy">
+    <img class="ph" src="img/einat-bisou.jpg" alt="Umi qui fait un bisou à Einat dans un jardin" loading="lazy"><img class="ph" src="img/louvre.jpg" alt="Umi en laisse devant la pyramide du Louvre" loading="lazy"><img class="ph" src="img/lac.jpg" alt="Umi trempée au bord du lac du bois de Boulogne" loading="lazy"><img class="ph" src="img/voiture.jpg" alt="Umi qui donne la patte, toute souriante" loading="lazy">
   </div>
   <div>
     <p class="eyebrow">Qui suis-je</p>
@@ -358,24 +356,17 @@ img{max-width:100%}
     <p class="eyebrow">Quartiers desservis</p>
     <h2>Le 17e <em>et tout autour</em></h2>
     <p class="lead" style="margin-top:16px">J'habite les Batignolles et je me déplace à pied ou en métro dans tout le nord-ouest de Paris. Votre chien, lui, ne quitte jamais son quartier.</p>
-    <ul class="parks">
-      <li><span>Batignolles · Épinettes · Clichy-Batignolles · Brochant</span><span>17e</span></li>
-      <li><span>Ternes · Monceau · Villiers · Pereire</span><span>17e · 8e</span></li>
-      <li><span>La Fourche · Guy-Môquet · Lamarck · Abbesses</span><span>18e</span></li>
-      <li><span>Europe · Saint-Lazare · Rome · Pigalle</span><span>8e · 9e</span></li>
-      <li><span>Levallois-Perret · Clichy</span><span>92</span></li>
-    </ul>
-    <p class="extras">Vous êtes un peu plus loin ? Écrivez-moi quand même.</p>
+    <p class="zone-court"><b>Paris 17e, 8e, 9e, 18e et Levallois.</b><br>Vous êtes un peu plus loin&nbsp;? Écrivez-moi quand&nbsp;même.</p>
   </div>
   <div class="map" aria-label="Carte des quartiers desservis">
     <div id="carte" hidden></div>
-    <svg id="carte-schema" viewBox="0 0 420 340" role="img" aria-labelledby="mapt"><title id="mapt">Zone desservie : 17e, 8e, 9e, 18e, Levallois-Perret et Clichy</title>
+    <svg id="carte-schema" viewBox="0 0 420 340" role="img" aria-labelledby="mapt"><title id="mapt">Zone desservie : 17e, 8e, 9e, 18e et Levallois-Perret</title>
       <ellipse cx="210" cy="172" rx="190" ry="150" fill="var(--sage-soft)"/>
       <ellipse cx="210" cy="172" rx="190" ry="150" fill="none" stroke="var(--sage)" stroke-dasharray="2 6" stroke-width="1.2"/>
       <circle cx="200" cy="165" r="70" fill="var(--blush)" opacity=".7"/>
-      <g fill="var(--sage-deep)"><circle cx="78" cy="118" r="5"/><circle cx="168" cy="62" r="5"/><circle cx="312" cy="88" r="5"/><circle cx="340" cy="210" r="5"/><circle cx="250" cy="268" r="5"/><circle cx="110" cy="236" r="5"/></g>
+      <g fill="var(--sage-deep)"><circle cx="78" cy="118" r="5"/><circle cx="312" cy="88" r="5"/><circle cx="340" cy="210" r="5"/><circle cx="250" cy="268" r="5"/><circle cx="110" cy="236" r="5"/></g>
       <g font-family="Instrument Serif, Georgia, serif" font-size="17" fill="var(--ink)">
-        <text x="40" y="106">Levallois</text><text x="150" y="50">Clichy</text><text x="296" y="76">18e</text><text x="350" y="214">9e</text><text x="262" y="282">8e · Europe</text><text x="60" y="262">Ternes · Monceau</text>
+        <text x="40" y="106">Levallois</text><text x="296" y="76">18e</text><text x="350" y="214">9e</text><text x="262" y="282">8e · Europe</text><text x="60" y="262">Ternes · Monceau</text>
       </g>
       <circle cx="200" cy="165" r="9" fill="var(--blush-ink)"/>
       <text x="200" y="194" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="20" fill="var(--ink)">Batignolles</text>
@@ -404,7 +395,8 @@ img{max-width:100%}
 
 
 
-<footer><div class="wrap"><span class="brand">Les Balades des Pattounes</span><span>Promenade et visites de chiens · Paris 17e et alentours · <a class="tel" href="tel:+33631350982">06&nbsp;31&nbsp;35&nbsp;09&nbsp;82</a></span></div></footer>
+<footer><div class="wrap"><span class="brand">Les Balades des Pattounes</span><span>Promenade et visites de chiens · Paris 17e et alentours · <a class="tel" href="tel:+33631350982">06&nbsp;31&nbsp;35&nbsp;09&nbsp;82</a></span></div>
+<div class="wrap"><details class="ml"><summary>Mentions légales</summary><p>Éditrice : Einat Guedj, Paris 17e · Contact : <a class="tel" href="tel:+33631350982">06&nbsp;31&nbsp;35&nbsp;09&nbsp;82</a>, einat.guedj@gmail.com · Hébergement : GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.<br>Ce site ne dépose aucun cookie de suivi. La réservation passe par Cal.com et la carte par OpenStreetMap, qui ont leurs propres conditions.</p></details></div></footer>
 
 <script src="vendor/leaflet/leaflet.js"></script>
 <script>
@@ -443,7 +435,7 @@ if(cfg.calUsername && !inArtifact){
   Cal("init", { origin: "https://cal.com" });
   // Un bouton par rendez-vous chiens (adresses des « Event Types » sur Cal.com).
   const choix=document.getElementById('cal-choix'), booking=document.getElementById('booking');
-  const show=slug=>{booking.innerHTML='';Cal("inline", { elementOrSelector: "#booking", calLink: cfg.calUsername+'/'+slug, layout: "month_view" });};
+  const show=slug=>{booking.innerHTML='';Cal("inline", { elementOrSelector: "#booking", calLink: cfg.calUsername+'/'+slug, layout: "month_view", config: { theme: "light", layout: "month_view" } });};
   choix.hidden=false;
   document.getElementById('booking-hint').hidden=false;
   choix.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
@@ -465,15 +457,16 @@ if('IntersectionObserver' in window){
 if(!inArtifact && window.L){
   document.getElementById('carte').hidden=false;
   document.getElementById('carte-schema').setAttribute('hidden','');
-  const map=L.map('carte',{scrollWheelZoom:false,attributionControl:true}).setView([48.8862,2.3110],13);
+  const map=L.map('carte',{scrollWheelZoom:false,attributionControl:true,zoomSnap:0.25}).setView([48.8862,2.3110],13);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,
     attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
   const zone=[[48.8935,2.2775],[48.9030,2.2905],[48.9085,2.3045],[48.9025,2.3240],[48.9000,2.3440],[48.8890,2.3480],[48.8800,2.3440],[48.8735,2.3380],[48.8725,2.3220],[48.8745,2.3050],[48.8760,2.2940],[48.8790,2.2830]];
-  L.polygon(zone,{color:'#5f8170',weight:1.5,dashArray:'4 6',fillColor:'#7e9e89',fillOpacity:.14}).addTo(map);
+  const poly=L.polygon(zone,{color:'#5f8170',weight:1.5,dashArray:'4 6',fillColor:'#7e9e89',fillOpacity:.14}).addTo(map);
+  map.fitBounds(poly.getBounds(),{padding:[14,14]});
   L.circleMarker([48.8873,2.3195],{radius:8,color:'#fff',weight:2,fillColor:'#c07a66',fillOpacity:1}).addTo(map)
     .bindTooltip('Batignolles',{permanent:true,direction:'top',offset:[0,-8]});
-  [['Levallois',48.8935,2.2870],['Clichy',48.9030,2.3060],['Épinettes',48.8955,2.3240],['La Fourche',48.8875,2.3260],['Ternes',48.8800,2.2960],['Monceau',48.8790,2.3090],['Saint-Lazare',48.8760,2.3250],['Pigalle',48.8820,2.3375]]
-    .forEach(([n,a,b])=>L.circleMarker([a,b],{radius:4,color:'#5f8170',weight:1,fillColor:'#5f8170',fillOpacity:1}).addTo(map).bindTooltip(n,{permanent:true,direction:'right',offset:[6,0]}));
+  [['Levallois',48.8935,2.2870],['Épinettes',48.8955,2.3240],['La Fourche',48.8875,2.3260],['Ternes',48.8800,2.2960],['Monceau',48.8790,2.3090],['Saint-Lazare',48.8760,2.3250],['Pigalle',48.8820,2.3375]]
+    .forEach(([n,a,b])=>L.circleMarker([a,b],{radius:4,color:'#5f8170',weight:1,fillColor:'#5f8170',fillOpacity:1}).addTo(map).bindTooltip(n,{permanent:true,direction:b>2.322?'left':'right',offset:[b>2.322?-6:6,0],className:['La Fourche','Monceau','Saint-Lazare'].includes(n)?'lab-sec':''}));
 }
 </script>
 
